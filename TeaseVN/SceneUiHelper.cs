@@ -9,23 +9,10 @@ namespace TeaseVN
 {
     class SceneUiHelper
     {
-        public static void checkHoveringChoice(MouseState mouseState, SceneManager sceneManager)
+        public static bool buttonIsHovered(MouseState mouseState, Button button)
         {
             var mousePoint = new Point(mouseState.X, mouseState.Y);
-
-            List<Button> choiceButtons = sceneManager.currentSceneChoiceButtons;
-            foreach (Button choiceButton in choiceButtons)
-            {
-                if (choiceButton.buttonRect.Contains(mousePoint))
-                {
-                    //Debug.WriteLine("Hovering button " + choiceButton.buttonText);
-                    sceneManager.setChoiceButtonHovered(choiceButton.id);
-                }
-                else
-                {
-                    sceneManager.setChoiceButtonNotHovered(choiceButton.id);
-                }
-            }
+            return button.buttonRect.Contains(mousePoint);
         }
 
         public static void checkClickedChoice(MouseState mouseState, SceneManager sceneManager)

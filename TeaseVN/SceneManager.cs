@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -119,6 +120,32 @@ namespace TeaseVN
 
             return buttons;
         }
+        public void processHoveredButtons(MouseState mouseState)
+        {
+            foreach (Button choiceButton in this.currentSceneChoiceButtons)
+            {
+                if (SceneUiHelper.buttonIsHovered(mouseState, choiceButton))
+                {
+                    this.setChoiceButtonHovered(choiceButton.id);
+                }
+                else
+                {
+                    this.setChoiceButtonNotHovered(choiceButton.id);
+                }
+            }
+        }
+        public void processClickedButtons(MouseState mouseState)
+        {
+            foreach (Button choiceButton in this.currentSceneChoiceButtons)
+            {
+                if (SceneUiHelper.buttonIsHovered(mouseState, choiceButton))
+                {
+                    this.setChoiceButtonClicked(choiceButton.id);
+                }
+            }
+        }
+
+
         public void progress()
         {
             currentScene.progress();

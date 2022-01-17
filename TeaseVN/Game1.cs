@@ -56,10 +56,7 @@ namespace TeaseVN
 
             //******* UI RESPONSE *******//
             //**************************//
-
-            //this should return the hovered button id, scene manager should update the actual state
-            SceneUiHelper.checkHoveringChoice(this.currentMouseState, _sceneManager);
-
+            _sceneManager.processHoveredButtons(this.currentMouseState);
 
             //****** HANDLE INPUT*******//
             //*************************//
@@ -67,8 +64,7 @@ namespace TeaseVN
             //Left Click
             if (lastMouseState.LeftButton == ButtonState.Released && this.currentMouseState.LeftButton == ButtonState.Pressed)
             {
-                //this should return the clicked button id, scene manager should update the actual state
-                SceneUiHelper.checkClickedChoice(this.currentMouseState, _sceneManager);
+                _sceneManager.processClickedButtons(this.currentMouseState);
                 _sceneManager.progress();
             }
 
@@ -97,8 +93,8 @@ namespace TeaseVN
             _spriteBatch.Draw(_sceneManager.getCurrentBackground(), this.backgroundRectangle, Color.White);
 
             //Draw choice buttons
-            List<Button> choiceButtons = _sceneManager.currentSceneChoiceButtons;
-            foreach(Button choiceButton in choiceButtons){
+            foreach(Button choiceButton in _sceneManager.currentSceneChoiceButtons)
+            {
                 _spriteBatch.Draw(choiceButton.buttonTexture, choiceButton.buttonRect, Color.White);
                 _spriteBatch.DrawString(font, choiceButton.buttonText, choiceButton.buttonPosition, Color.White);
             }
