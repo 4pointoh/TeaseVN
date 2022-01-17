@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "26tqwGVbwbaWXxlUBB9vQr3YzI+etsn8x6zE8jN4//oZdYoC3ufgtDbxKZh63Isc+2uHwo/iKjZZttftAZ/bbQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\4poin\\source\\repos\\TeaseVN\\TeaseVN\\TeaseVN.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\4poin\\.nuget\\packages\\monogame.content.builder.task\\3.8.0.1641\\monogame.content.builder.task.3.8.0.1641.nupkg.sha512",
+    "C:\\Users\\4poin\\.nuget\\packages\\monogame.extended\\3.8.0\\monogame.extended.3.8.0.nupkg.sha512",
+    "C:\\Users\\4poin\\.nuget\\packages\\monogame.extended.input\\3.8.0\\monogame.extended.input.3.8.0.nupkg.sha512",
+    "C:\\Users\\4poin\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.0.1641\\monogame.framework.desktopgl.3.8.0.1641.nupkg.sha512",
+    "C:\\Users\\4poin\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

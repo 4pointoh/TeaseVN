@@ -1,0 +1,9 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/6.png","C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/bin/DesktopGL/Content/6.xnb","TextureProcessor","Texture2DContent",13435,8294485,0.7261837
+"C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/7.png","C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/bin/DesktopGL/Content/7.xnb","TextureProcessor","Texture2DContent",13112,8294485,0.3788163
+"C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/8.png","C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/bin/DesktopGL/Content/8.xnb","TextureProcessor","Texture2DContent",13609,8294485,0.381099
+"C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/9.png","C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/bin/DesktopGL/Content/9.xnb","TextureProcessor","Texture2DContent",13570,8294485,0.38319
+"C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/assets/dialogue-background.png","C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/bin/DesktopGL/Content/assets/dialogue-background.xnb","TextureProcessor","Texture2DContent",147,160085,0.2374556
+"C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/assets/font.spritefont","C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/bin/DesktopGL/Content/assets/font.xnb","FontDescriptionProcessor","SpriteFontContent",2008,37922,0.2520517
+"C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/assets/ui-background.png","C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/bin/DesktopGL/Content/assets/ui-background.xnb","TextureProcessor","Texture2DContent",3187,10085,0.2938167
+"C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/assets/ui-background2.png","C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/bin/DesktopGL/Content/assets/ui-background2.xnb","TextureProcessor","Texture2DContent",3187,10085,0.2297025
