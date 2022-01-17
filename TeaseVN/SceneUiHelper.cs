@@ -7,7 +7,7 @@ using System.Text;
 
 namespace TeaseVN
 {
-    class SceneUiManager
+    class SceneUiHelper
     {
         public static void checkHoveringChoice(MouseState mouseState, SceneManager sceneManager)
         {

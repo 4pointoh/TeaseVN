@@ -51,28 +51,36 @@ namespace TeaseVN
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
-
             MouseState lastMouseState = this.currentMouseState;
             this.currentMouseState = Mouse.GetState();
 
-            SceneUiManager.checkHoveringChoice(this.currentMouseState, _sceneManager);
+            //******* UI RESPONSE *******//
+            //**************************//
 
-            // Recognize a single click of the left mouse button
-            bool mouseClicked = false;
+            //this should return the hovered button id, scene manager should update the actual state
+            SceneUiHelper.checkHoveringChoice(this.currentMouseState, _sceneManager);
+
+
+            //****** HANDLE INPUT*******//
+            //*************************//
+
+            //Left Click
             if (lastMouseState.LeftButton == ButtonState.Released && this.currentMouseState.LeftButton == ButtonState.Pressed)
             {
-                SceneUiManager.checkClickedChoice(this.currentMouseState, _sceneManager);
-                mouseClicked = true;
-            }
-
-            if (mouseClicked)
-            {
+                //this should return the clicked button id, scene manager should update the actual state
+                SceneUiHelper.checkClickedChoice(this.currentMouseState, _sceneManager);
                 _sceneManager.progress();
             }
 
-            //FPS counter
+            //Esc
+            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+            {
+                Exit();
+                //TBD - autosave here
+            }
+
+            //******* DEBUG LOGIC ********//
+            //***************************//
             var deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
             _frameCounter.Update(deltaTime);
 
@@ -85,6 +93,7 @@ namespace TeaseVN
 
             _spriteBatch.Begin();
 
+            //Actual background image
             _spriteBatch.Draw(_sceneManager.getCurrentBackground(), this.backgroundRectangle, Color.White);
 
             //Draw choice buttons
@@ -94,12 +103,15 @@ namespace TeaseVN
                 _spriteBatch.DrawString(font, choiceButton.buttonText, choiceButton.buttonPosition, Color.White);
             }
 
+
+            //******* DEBUG LOGIC ********//
+            //***************************//
+
             //FPS Counter
             var fps = string.Format("FPS: {0}", _frameCounter.AverageFramesPerSecond);
             _spriteBatch.DrawString(font, fps, new Vector2(1, 1), Color.Red);
 
             _spriteBatch.End();
-
             base.Draw(gameTime);
         }
     }
