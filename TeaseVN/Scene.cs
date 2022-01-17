@@ -12,8 +12,8 @@ namespace TeaseVN
         public String id;
         public Panel currentPanel;
         public Scene nextScene;
-        protected bool sceneComplete;
-        protected bool currentPanelHasChoice = false;
+        public bool sceneComplete;
+        public bool currentPanelHasChoice = false;
         public int selectedChoice = -1;
         public List<Panel> panels;
         public Dictionary<String, Boolean> sceneFlags;
@@ -29,9 +29,18 @@ namespace TeaseVN
         }
 
         public abstract List<Panel> loadPanels();
-
         public abstract Panel getNextPanel();
-
+        public List<String> getCurrentPanelChoices()
+        {
+            if (currentPanel.choices?.Count == 0)
+            {
+                return new List<String>();
+            }
+            else
+            {
+                return currentPanel.choices;
+            }
+        }
         public void progress()
         {
             if (this.currentPanelHasChoice && this.selectedChoice == -1)
@@ -64,7 +73,6 @@ namespace TeaseVN
 
             Debug.WriteLine(this.currentPanel.text);
         }
-
         public void progressPanel(Panel nextPanel)
         {
             this.currentPanel = nextPanel;
@@ -77,33 +85,19 @@ namespace TeaseVN
                 this.currentPanelHasChoice = false;
             }
         }
-
         public Scene getNextScene()
         {
             return nextScene;
         }
-
         public void setNextScene(Scene nextScene)
         {
             this.sceneComplete = true;
             this.nextScene = nextScene;
         }
-
         public bool isComplete()
         {
             return sceneComplete;
         }
 
-        public List<String> getCurrentPanelChoices()
-        {
-            if (currentPanel.choices?.Count == 0)
-            {
-                return new List<String>();
-            }
-            else
-            {
-                return currentPanel.choices;
-            }
-        }
     }
 }

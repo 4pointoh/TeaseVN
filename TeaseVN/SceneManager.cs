@@ -31,17 +31,12 @@ namespace TeaseVN
             this.currentSceneChoiceButtons = getChoiceButtons();
             this.currentHoveredButtonId = -1;
         }
-
-        public List<String> getCurrentSceneChoices()
+        
+        public void setChoiceButtonClicked(int buttonId)
         {
-            return currentScene.getCurrentPanelChoices();
+            this.currentScene.selectedChoice = buttonId;
+            this.currentHoveredButtonId = -1;
         }
-
-        public bool currentSceneHasChoices()
-        {
-            return currentScene.getCurrentPanelChoices()?.Count != 0;
-        }
-
         public void setChoiceButtonHovered(int buttonId)
         {
             if (this.currentHoveredButtonId == buttonId)
@@ -58,15 +53,8 @@ namespace TeaseVN
                         this.currentHoveredButtonId = buttonId;
                     }
                 }
-            }  
+            }
         }
-
-        public void setChoiceButtonClicked(int buttonId)
-        {
-            this.currentScene.selectedChoice = buttonId;
-            this.currentHoveredButtonId = -1;
-        }
-
         public void setChoiceButtonNotHovered(int buttonId)
         {
             if (currentHoveredButtonId != buttonId)
@@ -85,12 +73,18 @@ namespace TeaseVN
                 }
             }
         }
-
         public Texture2D getCurrentBackground()
         {
             return currentScene.currentPanel.backgroundTexture;
         }
-
+        public List<String> getCurrentSceneChoices()
+        {
+            return currentScene.getCurrentPanelChoices();
+        }
+        public bool currentSceneHasChoices()
+        {
+            return currentScene.getCurrentPanelChoices()?.Count != 0;
+        }
         private List<Button> getChoiceButtons()
         {
             List<Button> buttons = new List<Button>();
@@ -125,7 +119,6 @@ namespace TeaseVN
 
             return buttons;
         }
-
         public void progress()
         {
             currentScene.progress();

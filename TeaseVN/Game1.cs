@@ -14,15 +14,13 @@ namespace TeaseVN
 {
     public class Game1 : Game
     {
-        Texture2D backgroundTexture;
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private SceneManager _sceneManager;
         private SpriteFont font;
-        MouseState currentMouseState = Mouse.GetState();
         private FrameCounter _frameCounter = new FrameCounter();
         private Rectangle backgroundRectangle;
-
+        private MouseState currentMouseState = Mouse.GetState();
 
         public Game1()
         {
@@ -74,6 +72,10 @@ namespace TeaseVN
                 _sceneManager.progress();
             }
 
+            //FPS counter
+            var deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            _frameCounter.Update(deltaTime);
+
             base.Update(gameTime);
         }
 
@@ -92,12 +94,9 @@ namespace TeaseVN
                 _spriteBatch.DrawString(font, choiceButton.buttonText, choiceButton.buttonPosition, Color.White);
             }
 
-            //Frame counter
-            var deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            _frameCounter.Update(deltaTime);
+            //FPS Counter
             var fps = string.Format("FPS: {0}", _frameCounter.AverageFramesPerSecond);
             _spriteBatch.DrawString(font, fps, new Vector2(1, 1), Color.Red);
-
 
             _spriteBatch.End();
 
