@@ -30,6 +30,10 @@ namespace TeaseVN
 
         public abstract List<Panel> loadPanels();
         public abstract Panel getNextPanel();
+        public String getSceneText()
+        {
+            return this.currentPanel.text;
+        }
         public List<String> getCurrentPanelChoices()
         {
             if (currentPanel.choices?.Count == 0)
@@ -49,32 +53,29 @@ namespace TeaseVN
                 return;
             }
 
-            if (!this.currentPanelHasChoice && this.currentPanel.nextPossiblePanels.Count == 1)
+            else if (!this.currentPanelHasChoice && this.currentPanel.nextPossiblePanels.Count == 1)
             {
                 progressPanel(this.panelsById[this.currentPanel.nextPossiblePanels[0]]);
             }
 
-            if (this.currentPanelHasChoice && this.selectedChoice != -1)
+            else if (this.currentPanelHasChoice && this.selectedChoice != -1)
             {
-                //tbd, multiple next panel possibilities, choice made, need to determine which one
-
-                Panel nextPanel = getNextPanel();
-                if (!isComplete())
-                {
-                    progressPanel(nextPanel);
-                }
+                progressPanel(getNextPanel());
                 this.selectedChoice = -1;
             }
 
-            if (!this.currentPanelHasChoice && this.currentPanel.nextPossiblePanels.Count != 1)
+            else if (!this.currentPanelHasChoice)
             {
-                //tbd, multiple next panel possibilities, need to determine which one
+                progressPanel(getNextPanel());
             }
-
-            Debug.WriteLine(this.currentPanel.text);
         }
         public void progressPanel(Panel nextPanel)
         {
+            if (isComplete())
+            {
+                //Current scene is completed, there is no next panel
+                return;
+            }
             this.currentPanel = nextPanel;
             if (nextPanel.choices.Count > 0)
             {

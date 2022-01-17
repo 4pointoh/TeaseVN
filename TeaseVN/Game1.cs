@@ -17,7 +17,7 @@ namespace TeaseVN
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private SceneManager _sceneManager;
-        private SpriteFont font;
+        public SpriteFont font;
         private FrameCounter _frameCounter = new FrameCounter();
         private Rectangle backgroundRectangle;
         private MouseState currentMouseState = Mouse.GetState();
@@ -35,7 +35,6 @@ namespace TeaseVN
 
         protected override void Initialize()
         {
-            _sceneManager = new SceneManager(this, new FirstDayChoiceScene(this));
             _graphics.PreferredBackBufferWidth = 1600;
             _graphics.PreferredBackBufferHeight = 900;
             _graphics.ApplyChanges();
@@ -47,6 +46,7 @@ namespace TeaseVN
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             font = Content.Load<SpriteFont>("assets/font");
+            _sceneManager = new SceneManager(this, new FirstDayChoiceScene(this));
         }
 
         protected override void Update(GameTime gameTime)
@@ -99,6 +99,9 @@ namespace TeaseVN
                 _spriteBatch.DrawString(font, choiceButton.buttonText, choiceButton.buttonPosition, Color.White);
             }
 
+            //Draw dialogue box
+            _spriteBatch.Draw(_sceneManager.dialogueBox.boxTexture, _sceneManager.dialogueBox.boxRect, Color.White);
+            _spriteBatch.DrawString(font, _sceneManager.dialogueBox.boxText, _sceneManager.dialogueBox.textPosition, Color.White);
 
             //******* DEBUG LOGIC ********//
             //***************************//

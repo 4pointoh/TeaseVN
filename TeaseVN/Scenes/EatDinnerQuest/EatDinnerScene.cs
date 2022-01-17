@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Diagnostics;
 using System.Linq;
+using TeaseVN.Scenes.SleepQuest;
 
 namespace TeaseVN.Scenes.EatDinnerQuest
 {
@@ -15,17 +16,17 @@ namespace TeaseVN.Scenes.EatDinnerQuest
             this.panels = new List<Panel>();
             Panel panelOne = new Panel();
             panelOne.backgroundTexture = game.Content.Load<Texture2D>("4");
-            panelOne.text = "Scene EatDinnerScene Panel 1";
+            panelOne.text = "Let's see what is for dinner.";
             panelOne.id = "1";
             panelOne.nextPossiblePanels.Add("2");
             Panel panelTwo = new Panel();
             panelTwo.backgroundTexture = game.Content.Load<Texture2D>("5");
-            panelTwo.text = "Scene EatDinnerScene Panel 2";
+            panelTwo.text = "Yum, potatoes and mash.";
             panelTwo.id = "2";
             panelTwo.nextPossiblePanels.Add("3");
             Panel panelThree = new Panel();
             panelThree.backgroundTexture = game.Content.Load<Texture2D>("6");
-            panelThree.text = "Scene EatDinnerScene Panel 3";
+            panelThree.text = "I'm tired now, I think I'll go to sleep.";
             panelThree.id = "3";
 
             this.panels.Add(panelOne);
@@ -39,7 +40,12 @@ namespace TeaseVN.Scenes.EatDinnerQuest
 
         public override Panel getNextPanel()
         {
-            throw new NotImplementedException();
+            if (this.currentPanel.id == "3")
+            {
+                setNextScene(new SleepScene(game));
+            }
+
+            return new Panel();
         }
     }
 }

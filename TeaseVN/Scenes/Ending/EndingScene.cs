@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 
-namespace TeaseVN.Scenes.EatDinnerQuest
+namespace TeaseVN.Scenes.Ending
 {
     class EndingScene : Scene
     {
@@ -15,7 +15,7 @@ namespace TeaseVN.Scenes.EatDinnerQuest
             this.panels = new List<Panel>();
             Panel panelOne = new Panel();
             panelOne.backgroundTexture = game.Content.Load<Texture2D>("10");
-            panelOne.text = "Scene Ending Panel 1";
+            panelOne.text = "The end :)";
             panelOne.id = "1";
 
             this.panels.Add(panelOne);

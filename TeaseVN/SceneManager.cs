@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using TeaseVN.Scenes.Intro;
 
@@ -17,20 +18,55 @@ namespace TeaseVN
         public Scene currentScene { get; set; }
 
         //Choice Buttons
-        public Texture2D choiceButtonTexture { get; set; }
+        public Texture2D standardUiBackground { get; set; }
         public Texture2D choiceButtonTextureHover { get; set; }
         public List<Button> currentSceneChoiceButtons { get; set; }
-        public int currentHoveredButtonId { get; set; }        
+        public int currentHoveredButtonId { get; set; }
+
+        //Dialogue Box
+        public DialogueBox dialogueBox { get; set; }
 
         public SceneManager(Game1 game, Scene firstScene)
         {
             this.currentScene = firstScene;
             this.game = game;
             this.Content = game.Content;
-            this.choiceButtonTexture = Content.Load<Texture2D>("assets/ui-background");
+            this.standardUiBackground = Content.Load<Texture2D>("assets/ui-background-3");
             this.choiceButtonTextureHover = Content.Load<Texture2D>("assets/ui-background2");
             this.currentSceneChoiceButtons = getChoiceButtons();
             this.currentHoveredButtonId = -1;
+            prepareDialogueBox();
+            refreshDialogueBoxText();
+        }
+        private void prepareDialogueBox()
+        {
+            this.dialogueBox = new DialogueBox();
+
+            const int BOTTOM_PADDING = 10;
+            const float PERCENTAGE_OF_SCREEN_HEIGHT = .20f;
+            const float PERCENTAGE_OF_SCREEN_WIDTH = .70f;
+
+            Rectangle gameBounds = game.GraphicsDevice.Viewport.Bounds;
+            int boxHeight = (int)(gameBounds.Height * PERCENTAGE_OF_SCREEN_HEIGHT);
+            int boxWidth = (int)(gameBounds.Width * PERCENTAGE_OF_SCREEN_WIDTH);
+            
+            this.dialogueBox.boxRect.Height = boxHeight;
+            this.dialogueBox.boxRect.Y = (int)(gameBounds.Height - BOTTOM_PADDING - boxHeight);
+            this.dialogueBox.boxRect.Width = boxWidth;
+            this.dialogueBox.boxRect.X = (gameBounds.Width - boxWidth) / 2;
+
+            this.dialogueBox.boxTexture = this.standardUiBackground;
+
+            Vector2 textPosition = new Vector2();
+            textPosition.X = this.dialogueBox.boxRect.X + 10;
+            textPosition.Y = this.dialogueBox.boxRect.Y + 10;
+            this.dialogueBox.textPosition = textPosition;
+        }
+
+        public void refreshDialogueBoxText()
+        {
+            String text = currentScene.getSceneText();
+            this.dialogueBox.boxText = TextBlockHelper.formatText(text, this.game.font, this.dialogueBox.boxRect.Width - 10);
         }
         
         public void setChoiceButtonClicked(int buttonId)
@@ -68,7 +104,7 @@ namespace TeaseVN
                 {
                     if (choiceButton.id == buttonId)
                     {
-                        choiceButton.buttonTexture = this.choiceButtonTexture;
+                        choiceButton.buttonTexture = this.standardUiBackground;
                         currentHoveredButtonId = -1;
                     }
                 }
@@ -106,7 +142,7 @@ namespace TeaseVN
             foreach(String choice in choices)
             {
                 Button button = new Button(
-                    this.choiceButtonTexture,
+                    this.standardUiBackground,
                     choice,
                     new Rectangle(positionX, positionY, choiceButtonWidth, choiceButtonHeight),
                     positionX + 10,
@@ -154,7 +190,10 @@ namespace TeaseVN
                 currentScene = currentScene.getNextScene();
             }
 
+            refreshDialogueBoxText();
+
             this.currentSceneChoiceButtons = getChoiceButtons();
+            Debug.WriteLine(currentScene.currentPanel.text + " (" + currentScene.currentPanel.id + ")");
         }
     }
 }

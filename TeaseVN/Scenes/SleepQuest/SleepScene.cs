@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TeaseVN.Scenes.Ending;
 
 namespace TeaseVN.Scenes.SleepQuest
 {
@@ -15,17 +16,17 @@ namespace TeaseVN.Scenes.SleepQuest
             this.panels = new List<Panel>();
             Panel panelOne = new Panel();
             panelOne.backgroundTexture = game.Content.Load<Texture2D>("7");
-            panelOne.text = "Scene SleepScene Panel 1";
+            panelOne.text = "Alright, time for sleep";
             panelOne.id = "1";
             panelOne.nextPossiblePanels.Add("2");
             Panel panelTwo = new Panel();
             panelTwo.backgroundTexture = game.Content.Load<Texture2D>("8");
-            panelTwo.text = "Scene SleepScene Panel 2";
+            panelTwo.text = "I set my alarm for 10am";
             panelTwo.id = "2";
             panelTwo.nextPossiblePanels.Add("3");
             Panel panelThree = new Panel();
             panelThree.backgroundTexture = game.Content.Load<Texture2D>("9");
-            panelThree.text = "Scene SleepScene Panel 3";
+            panelThree.text = "Good night";
             panelThree.id = "3";
 
             this.panels.Add(panelOne);
@@ -39,7 +40,12 @@ namespace TeaseVN.Scenes.SleepQuest
 
         public override Panel getNextPanel()
         {
-            throw new NotImplementedException();
+            if (this.currentPanel.id == "3")
+            {
+                setNextScene(new EndingScene(game));
+            }
+
+            return new Panel();
         }
     }
 }

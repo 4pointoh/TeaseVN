@@ -20,12 +20,12 @@ namespace TeaseVN.Scenes.Intro
             this.panels = new List<Panel>();
             Panel panelOne = new Panel();
             panelOne.backgroundTexture = game.Content.Load<Texture2D>("1");
-            panelOne.text = "Scene FirstDayChoiceScene Panel 1";
+            panelOne.text = "I'm home from school";
             panelOne.id = "1";
             panelOne.nextPossiblePanels.Add("2");
             Panel panelTwo = new Panel();
             panelTwo.backgroundTexture = game.Content.Load<Texture2D>("2");
-            panelTwo.text = "Scene FirstDayChoiceScene Panel 2";
+            panelTwo.text = "Should I eat dinner now, or wait until later?";
             panelTwo.id = "2";
             panelTwo.nextPossiblePanels.Add("3");
             panelTwo.nextPossiblePanels.Add("NewScene");
@@ -33,7 +33,7 @@ namespace TeaseVN.Scenes.Intro
             panelTwo.choices.Add("Get Dinner Later");
             Panel panelThree = new Panel();
             panelThree.backgroundTexture = game.Content.Load<Texture2D>("3");
-            panelThree.text = "Scene FirstDayChoiceScene Panel 3";
+            panelThree.text = "I waited until later to eat dinner, but now I'm tired. I could sleep, or I could go eat dinner. Should I go and eat dinner, or should I just go to sleep for the night?";
             panelThree.id = "3";
             panelThree.choices.Add("Go To Sleep");
             panelThree.choices.Add("Get Dinner");
