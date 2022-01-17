@@ -145,7 +145,6 @@ namespace TeaseVN
             }
         }
 
-
         public void progress()
         {
             currentScene.progress();
