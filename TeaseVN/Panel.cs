@@ -12,11 +12,11 @@ namespace TeaseVN
         public String text { get; set; }
         public List<String> choices { get; set; }
         public String id { get; set; }
-        public List<String> nextPossiblePanels { get; set; }
+        public String guaranteedNextPanel { get; set; }
         public Panel()
         {
-            this.nextPossiblePanels = new List<String>();
             this.choices = new List<String>();
+            this.guaranteedNextPanel = null;
         }
 
         public bool hasChoices()

@@ -30,6 +30,7 @@ namespace TeaseVN
 
         public abstract List<Panel> loadPanels();
         public abstract Panel getNextPanel();
+        public abstract void handlePanelEvents(); //Any logic that needs to run when the current panel ends
         public String getSceneText()
         {
             return this.currentPanel.text;
@@ -53,9 +54,9 @@ namespace TeaseVN
                 return;
             }
 
-            else if (!this.currentPanelHasChoice && this.currentPanel.nextPossiblePanels.Count == 1)
+            else if (!this.currentPanelHasChoice && this.currentPanel.guaranteedNextPanel != null)
             {
-                progressPanel(this.panelsById[this.currentPanel.nextPossiblePanels[0]]);
+                progressPanel(this.panelsById[this.currentPanel.guaranteedNextPanel]);
             }
 
             else if (this.currentPanelHasChoice && this.selectedChoice != -1)
@@ -71,11 +72,14 @@ namespace TeaseVN
         }
         public void progressPanel(Panel nextPanel)
         {
+            handlePanelEvents();
+
             if (isComplete())
             {
                 //Current scene is completed, there is no next panel
                 return;
             }
+
             this.currentPanel = nextPanel;
             if (nextPanel.choices.Count > 0)
             {

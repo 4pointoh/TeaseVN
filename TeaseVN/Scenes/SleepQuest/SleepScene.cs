@@ -18,12 +18,12 @@ namespace TeaseVN.Scenes.SleepQuest
             panelOne.backgroundTexture = game.Content.Load<Texture2D>("7");
             panelOne.text = "Alright, time for sleep";
             panelOne.id = "1";
-            panelOne.nextPossiblePanels.Add("2");
+            panelOne.guaranteedNextPanel = "2";
             Panel panelTwo = new Panel();
             panelTwo.backgroundTexture = game.Content.Load<Texture2D>("8");
             panelTwo.text = "I set my alarm for 10am";
             panelTwo.id = "2";
-            panelTwo.nextPossiblePanels.Add("3");
+            panelTwo.guaranteedNextPanel = "3";
             Panel panelThree = new Panel();
             panelThree.backgroundTexture = game.Content.Load<Texture2D>("9");
             panelThree.text = "Good night";
@@ -46,6 +46,10 @@ namespace TeaseVN.Scenes.SleepQuest
             }
 
             return new Panel();
+        }
+        public override void handlePanelEvents()
+        {
+
         }
     }
 }

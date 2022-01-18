@@ -39,3 +39,4 @@ C:\Users\4poin\source\repos\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\asse
 C:\Users\4poin\source\repos\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\assets\ui-background2.xnb
 C:\Users\4poin\source\repos\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\assets\ui-background.xnb
 C:\Users\4poin\source\repos\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\assets\ui-background-3.xnb
+C:\Users\4poin\source\repos\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\SceneTemplate.xnb

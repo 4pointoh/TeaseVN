@@ -18,12 +18,12 @@ namespace TeaseVN.Scenes.EatDinnerQuest
             panelOne.backgroundTexture = game.Content.Load<Texture2D>("4");
             panelOne.text = "Let's see what is for dinner.";
             panelOne.id = "1";
-            panelOne.nextPossiblePanels.Add("2");
+            panelOne.guaranteedNextPanel = "2";
             Panel panelTwo = new Panel();
             panelTwo.backgroundTexture = game.Content.Load<Texture2D>("5");
             panelTwo.text = "Yum, potatoes and mash.";
             panelTwo.id = "2";
-            panelTwo.nextPossiblePanels.Add("3");
+            panelTwo.guaranteedNextPanel = "3";
             Panel panelThree = new Panel();
             panelThree.backgroundTexture = game.Content.Load<Texture2D>("6");
             panelThree.text = "I'm tired now, I think I'll go to sleep.";
@@ -46,6 +46,10 @@ namespace TeaseVN.Scenes.EatDinnerQuest
             }
 
             return new Panel();
+        }
+        public override void handlePanelEvents()
+        {
+
         }
     }
 }

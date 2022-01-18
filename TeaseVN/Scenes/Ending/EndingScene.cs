@@ -29,5 +29,10 @@ namespace TeaseVN.Scenes.Ending
         {
             throw new NotImplementedException();
         }
+
+        public override void handlePanelEvents()
+        {
+            
+        }
     }
 }
