@@ -1,14 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using MonoGame.Extended.Screens;
-using MonoGame.Extended.Screens.Transitions;
-using MonoGame.Extended.Input.InputListeners;
-using System;
-using System.Diagnostics;
-using MonoGame.Extended.Input;
 using TeaseVN.Scenes.Intro;
-using System.Collections.Generic;
 
 namespace TeaseVN
 {
