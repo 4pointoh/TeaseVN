@@ -1,6 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Diagnostics;
+using TeaseVN.Core;
+using TeaseVN.Core.SceneUtil;
 using TeaseVN.Scenes.Intro;
 
 namespace TeaseVN
@@ -10,6 +13,8 @@ namespace TeaseVN
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private SceneManager _sceneManager;
+        private FlagManager _flagManager;
+        private TimeManager _timeManager;
         public SpriteFont font;
         private FrameCounter _frameCounter = new FrameCounter();
         private Rectangle backgroundRectangle;

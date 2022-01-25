@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Graphics;
-
+using TeaseVN.Core;
 
 namespace TeaseVN
 {
@@ -20,6 +21,8 @@ namespace TeaseVN
         public Game1 game;
         public Dictionary<string, Panel> panelsById;
 
+        public abstract String sceneName {get;}
+
         public Scene(Game1 curGame)
         {
             game = curGame;
@@ -28,7 +31,13 @@ namespace TeaseVN
             this.currentPanel = this.panels[0];
         }
 
-        public abstract List<Panel> loadPanels();
+        public List<Panel> loadPanels()
+        {
+            this.panels = SceneJsonParser.loadScene(this.sceneName, game);
+            this.panelsById = this.panels.ToDictionary(panel => panel.id, panel => panel);
+
+            return this.panels;
+        }
         public abstract Panel getNextPanel();
         public abstract void handlePanelEvents(); //Any logic that needs to run when the current panel ends
         public String getSceneText()

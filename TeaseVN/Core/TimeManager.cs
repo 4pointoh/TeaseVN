@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TeaseVN.Core
 {
-    class TimeManager
+    public class TimeManager
     {
         int MAX_TIME = 24; // 8 = 8am 
         int MAX_DAY = 7; // 1 = Sun, 7 = Sat

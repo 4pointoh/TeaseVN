@@ -1,0 +1,10 @@
+{
+    "scene":"Ending",
+    "panels": [
+        {
+            "id": "1",
+            "image": "10",
+            "text" : "The end :)"
+        }
+    ]
+}
