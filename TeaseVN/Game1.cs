@@ -13,6 +13,7 @@ namespace TeaseVN
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private SceneManager _sceneManager;
+        private RoomManager _roomManager;
         private FlagManager _flagManager;
         private TimeManager _timeManager;
         public SpriteFont font;
@@ -45,6 +46,7 @@ namespace TeaseVN
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             font = Content.Load<SpriteFont>("assets/font");
             _sceneManager = new SceneManager(this, new FirstDayChoiceScene(this));
+            _roomManager = new RoomManager(this);
         }
 
         protected override void Update(GameTime gameTime)
@@ -52,18 +54,34 @@ namespace TeaseVN
             MouseState lastMouseState = this.currentMouseState;
             this.currentMouseState = Mouse.GetState();
 
-            //******* UI RESPONSE *******//
-            //**************************//
-            _sceneManager.processHoveredButtons(this.currentMouseState);
 
-            //****** HANDLE INPUT*******//
-            //*************************//
-
-            //Left Click
-            if (lastMouseState.LeftButton == ButtonState.Released && this.currentMouseState.LeftButton == ButtonState.Pressed)
+            if (_sceneManager.hasActiveScene)
             {
-                _sceneManager.processClickedButtons(this.currentMouseState);
-                _sceneManager.progress();
+                //SCENE LOGIC BLOCK
+
+                //******* UI RESPONSE *******//
+                //**************************//
+                _sceneManager.processHoveredButtons(this.currentMouseState);
+
+                //****** HANDLE INPUT*******//
+                //*************************//
+
+                //Left Click
+                if (lastMouseState.LeftButton == ButtonState.Released && this.currentMouseState.LeftButton == ButtonState.Pressed)
+                {
+                    _sceneManager.processClickedButtons(this.currentMouseState);
+                    _sceneManager.progress();
+                }
+            }
+            else
+            {
+                //ROOM LOGIC BLOCK
+
+                //Left Click
+                if (lastMouseState.LeftButton == ButtonState.Released && this.currentMouseState.LeftButton == ButtonState.Pressed)
+                {
+                    _sceneManager.setCurrentScene(new FirstDayChoiceScene(this));
+                }
             }
 
             //Esc
@@ -83,24 +101,33 @@ namespace TeaseVN
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
 
             _spriteBatch.Begin();
 
-            //Actual background image
-            _spriteBatch.Draw(_sceneManager.getCurrentBackground(), this.backgroundRectangle, Color.White);
-
-            //Draw choice buttons
-            foreach (Button choiceButton in _sceneManager.currentSceneChoiceButtons)
+            if (_sceneManager.hasActiveScene)
             {
-                _spriteBatch.Draw(choiceButton.buttonTexture, choiceButton.buttonRect, Color.White);
-                _spriteBatch.DrawString(font, choiceButton.buttonText, choiceButton.buttonPosition, Color.White);
+                //SCENE LOGIC
+                //Actual background image
+                _spriteBatch.Draw(_sceneManager.getCurrentBackground(), this.backgroundRectangle, Color.White);
+
+                //Draw choice buttons
+                foreach (Button choiceButton in _sceneManager.currentSceneChoiceButtons)
+                {
+                    _spriteBatch.Draw(choiceButton.buttonTexture, choiceButton.buttonRect, Color.White);
+                    _spriteBatch.DrawString(font, choiceButton.buttonText, choiceButton.buttonPosition, Color.White);
+                }
+
+                //Draw dialogue box
+                _spriteBatch.Draw(_sceneManager.dialogueBox.boxTexture, _sceneManager.dialogueBox.boxRect, Color.White);
+                _spriteBatch.DrawString(font, _sceneManager.dialogueBox.boxText, _sceneManager.dialogueBox.textPosition, Color.White);
+
             }
-
-            //Draw dialogue box
-            _spriteBatch.Draw(_sceneManager.dialogueBox.boxTexture, _sceneManager.dialogueBox.boxRect, Color.White);
-            _spriteBatch.DrawString(font, _sceneManager.dialogueBox.boxText, _sceneManager.dialogueBox.textPosition, Color.White);
-
+            else
+            {
+                //ROOM LOGIC
+                _spriteBatch.Draw(_roomManager.getCurrentBackground(), this.backgroundRectangle, Color.White);
+            }
             //******* DEBUG LOGIC ********//
             //***************************//
 

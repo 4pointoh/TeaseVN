@@ -26,6 +26,9 @@ namespace TeaseVN
         //Dialogue Box
         public DialogueBox dialogueBox { get; set; }
 
+        //Other
+        public Boolean hasActiveScene { get; set; }
+
         public SceneManager(Game1 game, Scene firstScene)
         {
             this.currentScene = firstScene;
@@ -35,6 +38,7 @@ namespace TeaseVN
             this.choiceButtonTextureHover = Content.Load<Texture2D>("assets/ui-background2");
             this.currentSceneChoiceButtons = getChoiceButtons();
             this.currentHoveredButtonId = -1;
+            this.hasActiveScene = true;
             prepareDialogueBox();
             refreshDialogueBoxText();
         }
@@ -187,13 +191,31 @@ namespace TeaseVN
 
             if (currentScene.isComplete())
             {
-                currentScene = currentScene.getNextScene();
+                setCurrentScene(currentScene.getNextScene());
             }
 
-            refreshDialogueBoxText();
-
-            this.currentSceneChoiceButtons = getChoiceButtons();
+            if (this.hasActiveScene)
+            {
+                refreshDialogueBoxText();
+                this.currentSceneChoiceButtons = getChoiceButtons();
+            }
+            
             Debug.WriteLine(currentScene.currentPanel.text + " (" + currentScene.currentPanel.id + ")");
+        }
+
+        public void setCurrentScene(Scene scene)
+        {
+            currentScene = scene;
+            if (currentScene.sceneName == "NoScene")
+            {
+                this.hasActiveScene = false;
+            }
+            else
+            {
+                this.hasActiveScene = true;
+                refreshDialogueBoxText();
+                this.currentSceneChoiceButtons = getChoiceButtons();
+            }
         }
     }
 }

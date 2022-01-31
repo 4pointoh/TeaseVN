@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using TeaseVN.Scenes.Intro;
 
 namespace TeaseVN.Scenes.Ending
 {
@@ -13,7 +14,8 @@ namespace TeaseVN.Scenes.Ending
 
         public override Panel getNextPanel()
         {
-            throw new NotImplementedException();
+            setNextScene(new NoScene(game));
+            return new Panel();
         }
 
         public override void handlePanelEvents()
