@@ -33,8 +33,8 @@ namespace TeaseVN
 
         protected override void Initialize()
         {
-            _graphics.PreferredBackBufferWidth = 1600;
-            _graphics.PreferredBackBufferHeight = 900;
+            _graphics.PreferredBackBufferWidth = 1280;
+            _graphics.PreferredBackBufferHeight = 720;
             _graphics.ApplyChanges();
             this.backgroundRectangle = GraphicsDevice.Viewport.Bounds;
             base.Initialize();
@@ -91,7 +91,7 @@ namespace TeaseVN
             _spriteBatch.Draw(_sceneManager.getCurrentBackground(), this.backgroundRectangle, Color.White);
 
             //Draw choice buttons
-            foreach(Button choiceButton in _sceneManager.currentSceneChoiceButtons)
+            foreach (Button choiceButton in _sceneManager.currentSceneChoiceButtons)
             {
                 _spriteBatch.Draw(choiceButton.buttonTexture, choiceButton.buttonRect, Color.White);
                 _spriteBatch.DrawString(font, choiceButton.buttonText, choiceButton.buttonPosition, Color.White);

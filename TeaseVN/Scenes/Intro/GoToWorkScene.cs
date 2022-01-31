@@ -29,7 +29,7 @@ namespace TeaseVN.Scenes.Intro
             }
             else if (this.currentPanel.id == "4" || this.currentPanel.id == "5")
             {
-                setNextScene(new SleepScene(game));
+                setNextScene(new NoScene(game));
             }
 
             return new Panel();

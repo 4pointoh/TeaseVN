@@ -149,7 +149,7 @@ namespace TeaseVN
                     positionY + 10,
                     buttonId
                     );
-                positionY += choiceButtonHeight + 50;
+                positionY += choiceButtonHeight + 20;
                 buttonId++;
                 buttons.Add(button);
             }
