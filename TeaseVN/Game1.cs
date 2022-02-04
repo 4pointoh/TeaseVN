@@ -20,6 +20,9 @@ namespace TeaseVN
         private FrameCounter _frameCounter = new FrameCounter();
         private Rectangle backgroundRectangle;
         private MouseState currentMouseState = Mouse.GetState();
+        private Texture2D cursorPointer;
+        private Vector2 cursorPos;
+        public bool usePointerCursor;
 
         public Game1()
         {
@@ -45,6 +48,7 @@ namespace TeaseVN
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             font = Content.Load<SpriteFont>("assets/font");
+            cursorPointer = Content.Load<Texture2D>("assets/hand-cursor");
             _sceneManager = new SceneManager(this, new FirstDayChoiceScene(this));
             _roomManager = new RoomManager(this);
         }
@@ -53,6 +57,7 @@ namespace TeaseVN
         {
             MouseState lastMouseState = this.currentMouseState;
             this.currentMouseState = Mouse.GetState();
+            cursorPos = new Vector2(this.currentMouseState.X, this.currentMouseState.Y);
 
 
             if (_sceneManager.hasActiveScene)
@@ -61,7 +66,7 @@ namespace TeaseVN
 
                 //******* UI RESPONSE *******//
                 //**************************//
-                _sceneManager.processHoveredButtons(this.currentMouseState);
+                usePointerCursor = _sceneManager.processHoveredButtons(this.currentMouseState);
 
                 //****** HANDLE INPUT*******//
                 //*************************//
@@ -76,11 +81,13 @@ namespace TeaseVN
             else
             {
                 //ROOM LOGIC BLOCK
+                usePointerCursor = _roomManager.processHoveredClickables(this.currentMouseState);
 
                 //Left Click
                 if (lastMouseState.LeftButton == ButtonState.Released && this.currentMouseState.LeftButton == ButtonState.Pressed)
                 {
-                    _sceneManager.setCurrentScene(new FirstDayChoiceScene(this));
+                    //_sceneManager.setCurrentScene(new FirstDayChoiceScene(this));
+                    _roomManager.processClickedClickables(this.currentMouseState);
                 }
             }
 
@@ -89,6 +96,16 @@ namespace TeaseVN
             {
                 Exit();
                 //TBD - autosave here
+            }
+
+
+            if (usePointerCursor)
+            {
+                SceneUiHelper.setCursorToPointer(this);
+            }
+            else
+            {
+                SceneUiHelper.setCursorToDefault(this);
             }
 
             //******* DEBUG LOGIC ********//
@@ -127,9 +144,19 @@ namespace TeaseVN
             {
                 //ROOM LOGIC
                 _spriteBatch.Draw(_roomManager.getCurrentBackground(), this.backgroundRectangle, Color.White);
+
+                foreach(Clickable item in _roomManager.getCurrentRoomClickables())
+                {
+                    _spriteBatch.Draw(item.texture, item.clickableArea, Color.White);
+                }
             }
             //******* DEBUG LOGIC ********//
             //***************************//
+
+            if (this.usePointerCursor)
+            {
+                _spriteBatch.Draw(cursorPointer, cursorPos, Color.White);
+            }
 
             //FPS Counter
             var fps = string.Format("FPS: {0}", _frameCounter.AverageFramesPerSecond);

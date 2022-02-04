@@ -1,8 +1,11 @@
 ﻿using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
+using TeaseVN.Rooms;
 
 namespace TeaseVN.Core
 {
@@ -32,25 +35,54 @@ namespace TeaseVN.Core
 
         private void loadRooms()
         {
-            Room kitchen = new Room();
+            Kitchen kitchen = new Kitchen(game);
             kitchen.backgroundTexture = Content.Load<Texture2D>("Rooms/Kitchen");
             kitchen.id = "Kitchen";
             rooms.Add(kitchen);
 
-            Room bathroom = new Room();
+            Bathroom bathroom = new Bathroom(game);
             bathroom.backgroundTexture = Content.Load<Texture2D>("Rooms/Bathroom");
             bathroom.id = "bathroom";
             rooms.Add(bathroom);
 
-            Room diningRoom = new Room();
+            DiningRoom diningRoom = new DiningRoom(game);
             diningRoom.backgroundTexture = Content.Load<Texture2D>("Rooms/Dining Room");
             diningRoom.id = "DiningRoom";
             rooms.Add(diningRoom);
 
-            Room bed = new Room();
+            Bed bed = new Bed(game);
             bed.backgroundTexture = Content.Load<Texture2D>("Rooms/Bed");
             bed.id = "bed";
             rooms.Add(bed);
+        }
+
+        public List<Clickable> getCurrentRoomClickables()
+        {
+            return this.currentRoom.getClickableItems();
+        }
+
+        public bool processHoveredClickables(MouseState mouseState)
+        {
+            foreach (Clickable item in this.getCurrentRoomClickables())
+            {
+                if (SceneUiHelper.clickableIsHovered(mouseState, item))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public void processClickedClickables(MouseState mouseState)
+        {
+            foreach (Clickable item in this.getCurrentRoomClickables())
+            {
+                if (SceneUiHelper.clickableIsHovered(mouseState, item))
+                {
+                    item.processClick();
+                }
+            }
         }
     }
 }

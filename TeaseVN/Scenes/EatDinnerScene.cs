@@ -24,9 +24,5 @@ namespace TeaseVN.Scenes.EatDinnerQuest
 
             return new Panel();
         }
-        public override void handlePanelEvents()
-        {
-
-        }
     }
 }

@@ -39,7 +39,10 @@ namespace TeaseVN
             return this.panels;
         }
         public abstract Panel getNextPanel();
-        public abstract void handlePanelEvents(); //Any logic that needs to run when the current panel ends
+        public virtual void handlePanelEvents()
+        {
+            //Any logic that needs to run when the current panel ends
+        }
         public String getSceneText()
         {
             return this.currentPanel.text;

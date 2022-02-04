@@ -160,19 +160,22 @@ namespace TeaseVN
 
             return buttons;
         }
-        public void processHoveredButtons(MouseState mouseState)
+        public bool processHoveredButtons(MouseState mouseState)
         {
             foreach (Button choiceButton in this.currentSceneChoiceButtons)
             {
                 if (SceneUiHelper.buttonIsHovered(mouseState, choiceButton))
                 {
                     this.setChoiceButtonHovered(choiceButton.id);
+                    return true;
                 }
                 else
                 {
                     this.setChoiceButtonNotHovered(choiceButton.id);
                 }
             }
+
+            return false;
         }
         public void processClickedButtons(MouseState mouseState)
         {

@@ -18,9 +18,5 @@ namespace TeaseVN.Scenes.Ending
             return new Panel();
         }
 
-        public override void handlePanelEvents()
-        {
-            
-        }
     }
 }

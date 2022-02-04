@@ -21,9 +21,5 @@ namespace TeaseVN.Scenes.SleepQuest
 
             return new Panel();
         }
-        public override void handlePanelEvents()
-        {
-
-        }
     }
 }

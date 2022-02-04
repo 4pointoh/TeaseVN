@@ -44,3 +44,4 @@ C:\Users\4poin\source\repos\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\room
 C:\Users\4poin\source\repos\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\rooms\Bed.xnb
 C:\Users\4poin\source\repos\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\rooms\Dining Room.xnb
 C:\Users\4poin\source\repos\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\rooms\Kitchen.xnb
+C:\Users\4poin\source\repos\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\assets\hand-cursor.xnb

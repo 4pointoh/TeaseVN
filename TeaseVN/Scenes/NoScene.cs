@@ -13,9 +13,5 @@ namespace TeaseVN.Scenes.Intro
         {
             return new Panel();
         }
-        public override void handlePanelEvents()
-        {
-
-        }
     }
 }
