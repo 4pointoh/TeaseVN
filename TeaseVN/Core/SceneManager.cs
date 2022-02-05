@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
+using TeaseVN.Core;
 using TeaseVN.Scenes.Intro;
 
 namespace TeaseVN
@@ -209,7 +210,7 @@ namespace TeaseVN
         public void setCurrentScene(Scene scene)
         {
             currentScene = scene;
-            if (currentScene.sceneName == "NoScene")
+            if (currentScene.sceneName == SceneStorage.NO_SCENE)
             {
                 this.hasActiveScene = false;
             }

@@ -8,7 +8,7 @@ namespace TeaseVN.Core
 {
     class Clickable
     {
-        public delegate void clickProcessor();
+        public delegate NextEvent clickProcessor();
         public clickProcessor processClick;
         public Rectangle clickableArea { get; set; }
         public String id { get; set; }

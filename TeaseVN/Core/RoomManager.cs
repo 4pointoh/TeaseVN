@@ -74,15 +74,17 @@ namespace TeaseVN.Core
             return false;
         }
 
-        public void processClickedClickables(MouseState mouseState)
+        public NextEvent processClickedClickables(MouseState mouseState)
         {
             foreach (Clickable item in this.getCurrentRoomClickables())
             {
                 if (SceneUiHelper.clickableIsHovered(mouseState, item))
                 {
-                    item.processClick();
+                    return item.processClick();
                 }
             }
+
+            return null;
         }
     }
 }

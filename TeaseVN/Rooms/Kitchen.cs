@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using TeaseVN.Core;
+using TeaseVN.Scenes.EatDinnerQuest;
 
 namespace TeaseVN.Rooms
 {
@@ -27,7 +28,7 @@ namespace TeaseVN.Rooms
             rect.Width = 200;
             rect.Height = 200;
             cooking.clickableArea = rect;
-            cooking.texture = this.game.Content.Load<Texture2D>("assets/ui-background-3");
+            cooking.texture = game.Content.Load<Texture2D>("assets/ui-background-3");
             cooking.id = "Cooking";
             cooking.processClick = new Clickable.clickProcessor(cookingDelegate);
             return cooking;
@@ -41,20 +42,26 @@ namespace TeaseVN.Rooms
             rect.Width = 200;
             rect.Height = 200;
             chat.clickableArea = rect;
-            chat.texture = this.game.Content.Load<Texture2D>("assets/ui-background-3");
+            chat.texture = game.Content.Load<Texture2D>("assets/ui-background-3");
             chat.id = "Chat";
             chat.processClick = new Clickable.clickProcessor(chatDelegate);
             return chat;
         }
 
-        public static void cookingDelegate()
+        public static NextEvent cookingDelegate()
         {
+            NextEvent ev = new NextEvent();
+            ev.setNext(SceneStorage.DINNER_SCENE, NextEvent.SCENE_TYPE);
             Debug.WriteLine("Running Cooking Logic");
+            return ev;
         }
 
-        public static void chatDelegate()
+        public static NextEvent chatDelegate()
         {
+            NextEvent ev = new NextEvent();
+            ev.setNext(RoomStorage.DINING_ROOM, NextEvent.ROOM_TYPE);
             Debug.WriteLine("Running Chat Logic");
+            return ev;
         }
     }
 }

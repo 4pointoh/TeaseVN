@@ -10,11 +10,11 @@ namespace TeaseVN.Core
         public Texture2D backgroundTexture { get; set; }
         public String id { get; set; }
         private List<Clickable> clickableItems;
-        public Game1 game { get; set; }
+        public static Game1 game { get; set; }
 
-        public Room(Game1 game)
+        public Room(Game1 curGame)
         {
-            this.game = game;
+            game = curGame;
             this.clickableItems = new List<Clickable>();
             this.clickableItems.AddRange(getDefaultClickables());
         }

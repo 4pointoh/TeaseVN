@@ -16,6 +16,7 @@ namespace TeaseVN
         private RoomManager _roomManager;
         private FlagManager _flagManager;
         private TimeManager _timeManager;
+        private SceneStorage _sceneStorage;
         public SpriteFont font;
         private FrameCounter _frameCounter = new FrameCounter();
         private Rectangle backgroundRectangle;
@@ -51,6 +52,7 @@ namespace TeaseVN
             cursorPointer = Content.Load<Texture2D>("assets/hand-cursor");
             _sceneManager = new SceneManager(this, new FirstDayChoiceScene(this));
             _roomManager = new RoomManager(this);
+            _sceneStorage = new SceneStorage(this);
         }
 
         protected override void Update(GameTime gameTime)
@@ -58,6 +60,7 @@ namespace TeaseVN
             MouseState lastMouseState = this.currentMouseState;
             this.currentMouseState = Mouse.GetState();
             cursorPos = new Vector2(this.currentMouseState.X, this.currentMouseState.Y);
+            NextEvent nextEvent = null;
 
 
             if (_sceneManager.hasActiveScene)
@@ -87,9 +90,22 @@ namespace TeaseVN
                 if (lastMouseState.LeftButton == ButtonState.Released && this.currentMouseState.LeftButton == ButtonState.Pressed)
                 {
                     //_sceneManager.setCurrentScene(new FirstDayChoiceScene(this));
-                    _roomManager.processClickedClickables(this.currentMouseState);
+                    nextEvent = _roomManager.processClickedClickables(this.currentMouseState);
                 }
             }
+
+            if(nextEvent != null)
+            {
+                if (nextEvent.nextEventIsRoom)
+                {
+                   // _roomManager setCurrentRoom
+                }else if (nextEvent.nextEventIsScene)
+                {
+                    Scene nextScene = _sceneStorage.getScene(nextEvent.nextId);
+                    _sceneManager.setCurrentScene(nextScene);
+                }
+            }
+
 
             //Esc
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
@@ -150,13 +166,14 @@ namespace TeaseVN
                     _spriteBatch.Draw(item.texture, item.clickableArea, Color.White);
                 }
             }
-            //******* DEBUG LOGIC ********//
-            //***************************//
 
             if (this.usePointerCursor)
             {
                 _spriteBatch.Draw(cursorPointer, cursorPos, Color.White);
             }
+
+            //******* DEBUG LOGIC ********//
+            //***************************//
 
             //FPS Counter
             var fps = string.Format("FPS: {0}", _frameCounter.AverageFramesPerSecond);
