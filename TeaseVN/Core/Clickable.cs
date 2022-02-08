@@ -6,7 +6,7 @@ using System.Text;
 
 namespace TeaseVN.Core
 {
-    class Clickable
+    public class Clickable
     {
         public delegate NextEvent clickProcessor();
         public clickProcessor processClick;

@@ -6,9 +6,9 @@ using TeaseVN.Rooms;
 
 namespace TeaseVN.Core
 {
-    class RoomStorage
+    public class RoomStorage
     {
-        Dictionary<String, Room> roomById;
+        public Dictionary<String, Room> roomById;
         Game1 game;
 
         public static String KITCHEN_ROOM = "Kitchen";
@@ -40,6 +40,7 @@ namespace TeaseVN.Core
         {
             Kitchen kitchen = new Kitchen(game);
             kitchen.backgroundTexture = game.Content.Load<Texture2D>("Rooms/Kitchen");
+            kitchen.icon = game.Content.Load<Texture2D>("Rooms/KitchenIcon");
             kitchen.id = KITCHEN_ROOM;
             return kitchen;
         }
@@ -47,6 +48,7 @@ namespace TeaseVN.Core
         {
             Bed bed = new Bed(game);
             bed.backgroundTexture = game.Content.Load<Texture2D>("Rooms/Bed");
+            bed.icon = game.Content.Load<Texture2D>("Rooms/BedIcon");
             bed.id = BED_ROOM;
             return bed;
         }
@@ -54,6 +56,7 @@ namespace TeaseVN.Core
         {
             DiningRoom diningRoom = new DiningRoom(game);
             diningRoom.backgroundTexture = game.Content.Load<Texture2D>("Rooms/Dining Room");
+            diningRoom.icon = game.Content.Load<Texture2D>("Rooms/DiningRoomIcon");
             diningRoom.id = DINING_ROOM;
             return diningRoom;
         }
@@ -61,6 +64,7 @@ namespace TeaseVN.Core
         {
             Bathroom bathroom = new Bathroom(game);
             bathroom.backgroundTexture = game.Content.Load<Texture2D>("Rooms/Bathroom");
+            bathroom.icon = game.Content.Load<Texture2D>("Rooms/BathroomIcon");
             bathroom.id = BATHROOM_ROOM;
             return bathroom;
         }

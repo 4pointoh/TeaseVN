@@ -48,6 +48,13 @@ namespace TeaseVN.Rooms
             return chat;
         }
 
+        public override NextEvent roomDelegate()
+        {
+            NextEvent ev = new NextEvent();
+            ev.setNext(RoomStorage.KITCHEN_ROOM, NextEvent.ROOM_TYPE);
+            return ev;
+        }
+
         public static NextEvent cookingDelegate()
         {
             NextEvent ev = new NextEvent();

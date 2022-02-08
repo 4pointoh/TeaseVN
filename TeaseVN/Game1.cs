@@ -17,7 +17,7 @@ namespace TeaseVN
         private FlagManager _flagManager;
         private TimeManager _timeManager;
         private SceneStorage _sceneStorage;
-        private RoomStorage _roomStorage;
+        public RoomStorage _roomStorage;
         public SpriteFont font;
         private FrameCounter _frameCounter = new FrameCounter();
         private Rectangle backgroundRectangle;
@@ -33,8 +33,8 @@ namespace TeaseVN
             IsMouseVisible = true;
             
             //remove this to lock framerate to 60
-            _graphics.SynchronizeWithVerticalRetrace = false;
-            this.IsFixedTimeStep = false;
+            //_graphics.SynchronizeWithVerticalRetrace = false;
+            //this.IsFixedTimeStep = false;
         }
 
         protected override void Initialize()
@@ -167,6 +167,11 @@ namespace TeaseVN
                 foreach(Clickable item in _roomManager.getCurrentRoomClickables())
                 {
                     _spriteBatch.Draw(item.texture, item.clickableArea, Color.White);
+                }
+
+                foreach (Clickable item in _roomManager.getCurrentTravelOptions())
+                {
+                   _spriteBatch.Draw(item.texture, item.clickableArea, Color.White);
                 }
             }
 

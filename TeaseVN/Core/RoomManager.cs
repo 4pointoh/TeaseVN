@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Content;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System;
@@ -12,7 +13,7 @@ namespace TeaseVN.Core
     class RoomManager
     {
         public Room currentRoom { get; set; }
-        public List<Room> currentTravelOptions { get; set; }
+        public List<Clickable> currentTravelOptions { get; set; }
         public ContentManager Content { get; set; }
 
         public Game1 game;
@@ -22,7 +23,8 @@ namespace TeaseVN.Core
             this.game = game;
             this.Content = game.Content;
             this.currentRoom = startingRoom;
-
+            this.currentTravelOptions = new List<Clickable>();
+            this.setCurrentTravelOptions();
         }
 
         public void setCurrentRoom(Room room)
@@ -37,7 +39,10 @@ namespace TeaseVN.Core
 
         public List<Clickable> getCurrentRoomClickables()
         {
-            return this.currentRoom.getClickableItems();
+            List<Clickable> allClickables = new List<Clickable>();
+            allClickables.AddRange(this.currentRoom.getClickableItems());
+            allClickables.AddRange(this.getCurrentTravelOptions());
+            return allClickables;
         }
 
         public bool processHoveredClickables(MouseState mouseState)
@@ -64,6 +69,40 @@ namespace TeaseVN.Core
             }
 
             return null;
+        }
+
+        public List<Clickable> getCurrentTravelOptions()
+        {
+            return this.currentTravelOptions;
+        }
+
+        private void setCurrentTravelOptions()
+        {
+            var roomById = game._roomStorage.roomById;
+
+            Rectangle gameBounds = game.GraphicsDevice.Viewport.Bounds;
+
+            int iconHeight = 70;
+            int iconWidth = 70;
+            int iconDistanceFromBottom = 80;
+            int iconDistanceFromLeft = 50;
+            int iconHorizontalSpacing = 80;
+
+            foreach (Room room in roomById.Values)
+            {
+                Clickable roomClickable = new Clickable();
+                Rectangle rect = new Rectangle();
+                rect.X = iconDistanceFromLeft;
+                rect.Y = gameBounds.Height - iconDistanceFromBottom;
+                rect.Width = iconWidth;
+                rect.Height = iconHeight;
+                roomClickable.clickableArea = rect;
+                roomClickable.texture = room.icon;
+                roomClickable.id = room.id;
+                roomClickable.processClick = room.roomDelegate;
+                iconDistanceFromLeft += iconHorizontalSpacing;
+                this.currentTravelOptions.Add(roomClickable);
+            }
         }
     }
 }

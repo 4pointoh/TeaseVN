@@ -5,9 +5,10 @@ using System.Text;
 
 namespace TeaseVN.Core
 {
-    abstract class Room
+    abstract public class Room
     {
         public Texture2D backgroundTexture { get; set; }
+        public Texture2D icon { get; set; }
         public String id { get; set; }
         private List<Clickable> clickableItems;
         public static Game1 game { get; set; }
@@ -30,5 +31,7 @@ namespace TeaseVN.Core
             //based on flag logic or something
             return this.clickableItems;
         }
+
+        abstract public NextEvent roomDelegate();
     }
 }

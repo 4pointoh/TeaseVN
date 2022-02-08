@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TeaseVN.Core
 {
-    class NextEvent
+    public class NextEvent
     {
         public String nextId;
         public bool nextEventIsRoom;

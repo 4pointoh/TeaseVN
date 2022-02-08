@@ -212,6 +212,18 @@
 /processorParam:TextureFormat=Color
 /build:rooms/Bathroom.png
 
+#begin rooms/BathroomIcon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:rooms/BathroomIcon.png
+
 #begin rooms/Bed.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -223,6 +235,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:rooms/Bed.png
+
+#begin rooms/BedIcon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:rooms/BedIcon.png
 
 #begin rooms/Dining Room.png
 /importer:TextureImporter
@@ -236,6 +260,18 @@
 /processorParam:TextureFormat=Color
 /build:rooms/Dining Room.png
 
+#begin rooms/DiningRoomIcon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:rooms/DiningRoomIcon.png
+
 #begin rooms/Kitchen.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -247,6 +283,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:rooms/Kitchen.png
+
+#begin rooms/KitchenIcon.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:rooms/KitchenIcon.png
 
 #begin SceneTemplate.png
 /importer:TextureImporter

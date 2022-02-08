@@ -21,12 +21,20 @@
     <File>C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/assets/ui-background2.png</File>
     <File>C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/assets/ui-background-3.png</File>
     <File>C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/rooms/Bathroom.png</File>
+    <File>C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/rooms/BathroomIcon.png</File>
     <File>C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/rooms/Bed.png</File>
+    <File>C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/rooms/BedIcon.png</File>
     <File>C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/rooms/Dining Room.png</File>
+    <File>C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/rooms/DiningRoomIcon.png</File>
     <File>C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/rooms/Kitchen.png</File>
+    <File>C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/rooms/KitchenIcon.png</File>
     <File>C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/SceneTemplate.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
