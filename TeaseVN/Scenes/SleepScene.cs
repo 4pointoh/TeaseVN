@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using TeaseVN.Core;
 using TeaseVN.Scenes.Ending;
 
 namespace TeaseVN.Scenes.SleepQuest
@@ -16,7 +17,7 @@ namespace TeaseVN.Scenes.SleepQuest
         {
             if (this.currentPanel.id == "3")
             {
-                setNextScene(new EndingScene(game));
+                setNextSceneId(SceneStorage.ENDING_SCENE);
             }
 
             return new Panel();

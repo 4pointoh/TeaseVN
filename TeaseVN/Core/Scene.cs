@@ -12,12 +12,12 @@ namespace TeaseVN
     {
         public String id;
         public Panel currentPanel;
-        public Scene nextScene;
+        public String nextSceneId;
         public bool sceneComplete;
         public bool currentPanelHasChoice = false;
         public int selectedChoice = -1;
         public List<Panel> panels;
-        public Dictionary<String, Boolean> sceneFlags;
+        public Dictionary<string, bool> sceneFlags;
         public Game1 game;
         public Dictionary<string, Panel> panelsById;
 
@@ -29,6 +29,7 @@ namespace TeaseVN
             sceneComplete = false;
             this.panels = loadPanels();
             this.currentPanel = this.panels[0];
+            this.sceneFlags = new Dictionary<string, bool>();
         }
 
         public List<Panel> loadPanels()
@@ -37,6 +38,14 @@ namespace TeaseVN
             this.panelsById = this.panels.ToDictionary(panel => panel.id, panel => panel);
 
             return this.panels;
+        }
+        public void completeScene()
+        {
+            this.sceneComplete = false;
+            this.currentPanel = this.panels[0];
+            this.selectedChoice = -1;
+            this.sceneFlags = new Dictionary<string, bool>();
+            this.currentPanelHasChoice = false;
         }
         public abstract Panel getNextPanel();
         public virtual void handlePanelEvents()
@@ -102,14 +111,14 @@ namespace TeaseVN
                 this.currentPanelHasChoice = false;
             }
         }
-        public Scene getNextScene()
+        public String getNextSceneId()
         {
-            return nextScene;
+            return this.nextSceneId;
         }
-        public void setNextScene(Scene nextScene)
+        public void setNextSceneId(String nextSceneId)
         {
             this.sceneComplete = true;
-            this.nextScene = nextScene;
+            this.nextSceneId = nextSceneId;
         }
         public bool isComplete()
         {

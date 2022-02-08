@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using TeaseVN.Scenes.Intro;
+using TeaseVN.Core;
 
 namespace TeaseVN.Scenes.Ending
 {
@@ -14,7 +15,7 @@ namespace TeaseVN.Scenes.Ending
 
         public override Panel getNextPanel()
         {
-            setNextScene(new NoScene(game));
+            setNextSceneId(SceneStorage.NO_SCENE);
             return new Panel();
         }
 

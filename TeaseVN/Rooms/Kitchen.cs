@@ -51,7 +51,7 @@ namespace TeaseVN.Rooms
         public static NextEvent cookingDelegate()
         {
             NextEvent ev = new NextEvent();
-            ev.setNext(SceneStorage.DINNER_SCENE, NextEvent.SCENE_TYPE);
+            ev.setNext(SceneStorage.FIRST_DAY_SCENE, NextEvent.SCENE_TYPE);
             Debug.WriteLine("Running Cooking Logic");
             return ev;
         }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using TeaseVN.Core;
 using TeaseVN.Scenes.EatDinnerQuest;
 using TeaseVN.Scenes.SleepQuest;
 
@@ -29,7 +30,7 @@ namespace TeaseVN.Scenes.Intro
             }
             else if (this.currentPanel.id == "4" || this.currentPanel.id == "5")
             {
-                setNextScene(new NoScene(game));
+                setNextSceneId(SceneStorage.NO_SCENE);
             }
 
             return new Panel();

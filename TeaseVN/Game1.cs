@@ -80,8 +80,7 @@ namespace TeaseVN
                 if (lastMouseState.LeftButton == ButtonState.Released && this.currentMouseState.LeftButton == ButtonState.Pressed)
                 {
                     //TBD shift this to similar logic as the room manager
-                    _sceneManager.processClickedButtons(this.currentMouseState);
-                    _sceneManager.progress();
+                    nextEvent = _sceneManager.processClickedButtons(this.currentMouseState);
                 }
             }
             else

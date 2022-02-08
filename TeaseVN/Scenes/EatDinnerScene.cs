@@ -19,7 +19,7 @@ namespace TeaseVN.Scenes.EatDinnerQuest
         {
             if (this.currentPanel.id == "3")
             {
-                setNextScene(new SleepScene(game));
+                setNextSceneId(SceneStorage.SLEEP_SCENE);
             }
 
             return new Panel();

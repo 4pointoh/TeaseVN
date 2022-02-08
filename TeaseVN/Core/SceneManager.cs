@@ -178,24 +178,32 @@ namespace TeaseVN
 
             return false;
         }
-        public void processClickedButtons(MouseState mouseState)
+        public NextEvent processClickedButtons(MouseState mouseState)
         {
+            NextEvent ev = null;
             foreach (Button choiceButton in this.currentSceneChoiceButtons)
             {
                 if (SceneUiHelper.buttonIsHovered(mouseState, choiceButton))
                 {
                     this.setChoiceButtonClicked(choiceButton.id);
+                    break;
                 }
             }
+
+            ev = progress();
+            return ev;
         }
 
-        public void progress()
+        public NextEvent progress()
         {
             currentScene.progress();
 
             if (currentScene.isComplete())
             {
-                setCurrentScene(currentScene.getNextScene());
+                currentScene.completeScene();
+                NextEvent ev = new NextEvent();
+                ev.setNext(currentScene.getNextSceneId(), NextEvent.SCENE_TYPE);
+                return ev;
             }
 
             if (this.hasActiveScene)
@@ -205,6 +213,7 @@ namespace TeaseVN
             }
             
             Debug.WriteLine(currentScene.currentPanel.text + " (" + currentScene.currentPanel.id + ")");
+            return null;
         }
 
         public void setCurrentScene(Scene scene)

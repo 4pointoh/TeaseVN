@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using TeaseVN.Core;
 using TeaseVN.Scenes.EatDinnerQuest;
 using TeaseVN.Scenes.SleepQuest;
 
@@ -37,7 +38,7 @@ namespace TeaseVN.Scenes.Intro
             {
                 if(this.selectedChoice == 0)
                 {
-                    setNextScene(new EatDinnerScene(game));
+                    setNextSceneId(SceneStorage.DINNER_SCENE);
                 }
                 else if(this.selectedChoice == 1)
                 {
@@ -45,18 +46,18 @@ namespace TeaseVN.Scenes.Intro
                 }
                 else if (this.selectedChoice == 2)
                 {
-                    setNextScene(new GoToWorkScene(game));
+                    setNextSceneId(SceneStorage.WORK_SCENE);
                 }
             }
             else if (this.currentPanel.id == "3")
             {
                 if (this.selectedChoice == 0)
                 {
-                    setNextScene(new SleepScene(game));
+                    setNextSceneId(SceneStorage.SLEEP_SCENE);
                 }
                 else if (this.selectedChoice == 1)
                 {
-                    setNextScene(new EatDinnerScene(game));
+                    setNextSceneId(SceneStorage.DINNER_SCENE);
                 }
             }
 
