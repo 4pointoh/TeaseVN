@@ -17,6 +17,7 @@ namespace TeaseVN
         private FlagManager _flagManager;
         private TimeManager _timeManager;
         private SceneStorage _sceneStorage;
+        private RoomStorage _roomStorage;
         public SpriteFont font;
         private FrameCounter _frameCounter = new FrameCounter();
         private Rectangle backgroundRectangle;
@@ -50,9 +51,10 @@ namespace TeaseVN
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             font = Content.Load<SpriteFont>("assets/font");
             cursorPointer = Content.Load<Texture2D>("assets/hand-cursor");
-            _sceneManager = new SceneManager(this, new FirstDayChoiceScene(this));
-            _roomManager = new RoomManager(this);
             _sceneStorage = new SceneStorage(this);
+            _sceneManager = new SceneManager(this, _sceneStorage.getScene(SceneStorage.FIRST_DAY_SCENE));
+            _roomStorage = new RoomStorage(this);
+            _roomManager = new RoomManager(this, _roomStorage.getRoom(RoomStorage.KITCHEN_ROOM));
         }
 
         protected override void Update(GameTime gameTime)
@@ -77,6 +79,7 @@ namespace TeaseVN
                 //Left Click
                 if (lastMouseState.LeftButton == ButtonState.Released && this.currentMouseState.LeftButton == ButtonState.Pressed)
                 {
+                    //TBD shift this to similar logic as the room manager
                     _sceneManager.processClickedButtons(this.currentMouseState);
                     _sceneManager.progress();
                 }
@@ -98,7 +101,8 @@ namespace TeaseVN
             {
                 if (nextEvent.nextEventIsRoom)
                 {
-                   // _roomManager setCurrentRoom
+                    Room nextRoom = _roomStorage.getRoom(nextEvent.nextId);
+                    _roomManager.setCurrentRoom(nextRoom);
                 }else if (nextEvent.nextEventIsScene)
                 {
                     Scene nextScene = _sceneStorage.getScene(nextEvent.nextId);

@@ -13,47 +13,26 @@ namespace TeaseVN.Core
     {
         public Room currentRoom { get; set; }
         public List<Room> currentTravelOptions { get; set; }
-        public List<Room> rooms { get; set; }
         public ContentManager Content { get; set; }
 
         public Game1 game;
 
-        public RoomManager(Game1 game)
+        public RoomManager(Game1 game, Room startingRoom)
         {
             this.game = game;
             this.Content = game.Content;
-            this.rooms = new List<Room>();
-            loadRooms();
-            this.currentRoom = rooms[0];
+            this.currentRoom = startingRoom;
 
+        }
+
+        public void setCurrentRoom(Room room)
+        {
+            this.currentRoom = room;
         }
 
         public Texture2D getCurrentBackground()
         {
             return currentRoom.backgroundTexture;
-        }
-
-        private void loadRooms()
-        {
-            Kitchen kitchen = new Kitchen(game);
-            kitchen.backgroundTexture = Content.Load<Texture2D>("Rooms/Kitchen");
-            kitchen.id = "Kitchen";
-            rooms.Add(kitchen);
-
-            Bathroom bathroom = new Bathroom(game);
-            bathroom.backgroundTexture = Content.Load<Texture2D>("Rooms/Bathroom");
-            bathroom.id = "bathroom";
-            rooms.Add(bathroom);
-
-            DiningRoom diningRoom = new DiningRoom(game);
-            diningRoom.backgroundTexture = Content.Load<Texture2D>("Rooms/Dining Room");
-            diningRoom.id = "DiningRoom";
-            rooms.Add(diningRoom);
-
-            Bed bed = new Bed(game);
-            bed.backgroundTexture = Content.Load<Texture2D>("Rooms/Bed");
-            bed.id = "bed";
-            rooms.Add(bed);
         }
 
         public List<Clickable> getCurrentRoomClickables()
