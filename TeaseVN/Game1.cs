@@ -33,8 +33,8 @@ namespace TeaseVN
             IsMouseVisible = true;
             
             //remove this to lock framerate to 60
-            //_graphics.SynchronizeWithVerticalRetrace = false;
-            //this.IsFixedTimeStep = false;
+            _graphics.SynchronizeWithVerticalRetrace = false;
+            this.IsFixedTimeStep = false;
         }
 
         protected override void Initialize()

@@ -1,40 +1,40 @@
 {
-    "scene":"FirstDay",
-    "panels": [
+  "scene": "FirstDay",
+  "panels": [
+    {
+      "id": "1",
+      "image": "1",
+      "text": "I'm home from school",
+      "guaranteedNextPanelId": "2"
+    },
+    {
+      "id": "2",
+      "image": "2",
+      "text": "Should I eat dinner now, or wait until later? Or go to work?",
+      "choices": [
         {
-            "id": "1",
-            "image": "1",
-            "text" : "I'm home from school",
-            "guaranteedNextPanelId":"2"
+          "choice": "Get Dinner Now"
         },
         {
-            "id": "2",
-            "image": "2",
-            "text": "Should I eat dinner now, or wait until later? Or go to work?",
-            "choices":[
-                {
-                    "choice":"Get Dinner Now"
-                },
-                {
-                    "choice":"Get Dinner Later"
-                },
-                {
-                    "choice":"Go To Work"
-                }
-            ]
+          "choice": "Get Dinner Later"
         },
         {
-            "id": "3",
-            "image": "3",
-            "text": "I waited until later to eat dinner, but now I'm tired. I could sleep, or I could go eat dinner. Should I go and eat dinner, or should I just go to sleep for the night?",
-            "choices":[
-                {
-                    "choice":"Go To Sleep"
-                },
-                {
-                    "choice":"Get Dinner"
-                }
-            ]
+          "choice": "Go To Work"
         }
-    ]
+      ]
+    },
+    {
+      "id": "3",
+      "image": "3",
+      "text": "I waited until later to eat dinner, but now I'm tired. I could sleep, or I could go eat dinner. Should I go and eat dinner, or should I just go to sleep for the night?",
+      "choices": [
+        {
+          "choice": "Go To Sleep"
+        },
+        {
+          "choice": "Get Dinner"
+        }
+      ]
+    }
+  ]
 }
