@@ -28,7 +28,7 @@ namespace TeaseVN
             game = curGame;
             sceneComplete = false;
             this.panels = loadPanels();
-            this.currentPanel = this.panels[0];
+            this.currentPanel = getStartingPanel();
             this.sceneFlags = new Dictionary<string, bool>();
         }
 
@@ -39,18 +39,26 @@ namespace TeaseVN
 
             return this.panels;
         }
-        public void completeScene()
+
+        public void initializeScene()
         {
             this.sceneComplete = false;
-            this.currentPanel = this.panels[0];
+            this.currentPanel = getStartingPanel();
             this.selectedChoice = -1;
             this.sceneFlags = new Dictionary<string, bool>();
             this.currentPanelHasChoice = false;
         }
+
         public abstract Panel getNextPanel();
         public virtual void handlePanelEvents()
         {
             //Any logic that needs to run when the current panel ends
+        }
+
+        //Override to change the starting panel
+        public virtual Panel getStartingPanel()
+        {
+            return this.panels[0];
         }
         public String getSceneText()
         {

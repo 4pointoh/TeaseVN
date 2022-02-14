@@ -6,6 +6,19 @@ namespace TeaseVN.Core
 {
     public class FlagManager
     {
+        public GlobalFlags globalFlags;
+        public PlayerFlags playerFlags;
+        public CharacterFlags characterFlags;
+        public SceneFlags sceneFlags;
+
+        public FlagManager()
+        {
+            globalFlags = new GlobalFlags();
+            playerFlags = new PlayerFlags();
+            characterFlags = new CharacterFlags();
+            sceneFlags = new SceneFlags();
+        }
+
         public class PlayerFlags
         {
             public int money { get; set; }
@@ -30,7 +43,7 @@ namespace TeaseVN.Core
 
         public class GlobalFlags
         {
-
+            public bool dinnerCooked { get; set; }
         }
 
         public class SceneFlags

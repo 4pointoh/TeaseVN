@@ -198,9 +198,10 @@ namespace TeaseVN
         {
             currentScene.progress();
 
+            Debug.WriteLine(currentScene.currentPanel.text + " (" + currentScene.currentPanel.id + ")");
+
             if (currentScene.isComplete())
             {
-                currentScene.completeScene();
                 NextEvent ev = new NextEvent();
                 ev.setNext(currentScene.getNextSceneId(), NextEvent.SCENE_TYPE);
                 return ev;
@@ -212,13 +213,13 @@ namespace TeaseVN
                 this.currentSceneChoiceButtons = getChoiceButtons();
             }
             
-            Debug.WriteLine(currentScene.currentPanel.text + " (" + currentScene.currentPanel.id + ")");
             return null;
         }
 
         public void setCurrentScene(Scene scene)
         {
             currentScene = scene;
+            currentScene.initializeScene();
             if (currentScene.sceneName == SceneStorage.NO_SCENE)
             {
                 this.hasActiveScene = false;

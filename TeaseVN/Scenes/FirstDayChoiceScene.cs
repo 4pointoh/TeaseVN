@@ -17,33 +17,10 @@ namespace TeaseVN.Scenes.Intro
 
         public override Panel getNextPanel()
         {
-            if(this.currentPanel.id == "2")
+            if (this.currentPanel.id == "3")
             {
-                if(this.selectedChoice == 0)
-                {
-                    setNextSceneId(SceneStorage.DINNER_SCENE);
-                }
-                else if(this.selectedChoice == 1)
-                {
-                    return panelsById["3"];
-                }
-                else if (this.selectedChoice == 2)
-                {
-                    setNextSceneId(SceneStorage.WORK_SCENE);
-                }
+                setNextSceneId(SceneStorage.NO_SCENE);
             }
-            else if (this.currentPanel.id == "3")
-            {
-                if (this.selectedChoice == 0)
-                {
-                    setNextSceneId(SceneStorage.SLEEP_SCENE);
-                }
-                else if (this.selectedChoice == 1)
-                {
-                    setNextSceneId(SceneStorage.DINNER_SCENE);
-                }
-            }
-
             return new Panel();
         }
 

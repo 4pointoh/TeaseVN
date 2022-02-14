@@ -14,8 +14,8 @@ namespace TeaseVN
         private SpriteBatch _spriteBatch;
         private SceneManager _sceneManager;
         private RoomManager _roomManager;
-        private FlagManager _flagManager;
-        private TimeManager _timeManager;
+        public FlagManager _flagManager;
+        public TimeManager _timeManager;
         private SceneStorage _sceneStorage;
         public RoomStorage _roomStorage;
         public SpriteFont font;
@@ -51,6 +51,8 @@ namespace TeaseVN
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             font = Content.Load<SpriteFont>("assets/font");
             cursorPointer = Content.Load<Texture2D>("assets/hand-cursor");
+            _flagManager = new FlagManager();
+            _timeManager = new TimeManager();
             _sceneStorage = new SceneStorage(this);
             _sceneManager = new SceneManager(this, _sceneStorage.getScene(SceneStorage.FIRST_DAY_SCENE));
             _roomStorage = new RoomStorage(this);
@@ -91,7 +93,6 @@ namespace TeaseVN
                 //Left Click
                 if (lastMouseState.LeftButton == ButtonState.Released && this.currentMouseState.LeftButton == ButtonState.Pressed)
                 {
-                    //_sceneManager.setCurrentScene(new FirstDayChoiceScene(this));
                     nextEvent = _roomManager.processClickedClickables(this.currentMouseState);
                 }
             }

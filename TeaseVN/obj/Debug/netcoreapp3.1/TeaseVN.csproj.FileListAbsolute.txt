@@ -49,3 +49,7 @@ C:\Users\4poin\source\repos\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\room
 C:\Users\4poin\source\repos\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\rooms\BedIcon.xnb
 C:\Users\4poin\source\repos\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\rooms\DiningRoomIcon.xnb
 C:\Users\4poin\source\repos\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\rooms\KitchenIcon.xnb
+C:\Users\4poin\source\repos\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\cook.xnb
+C:\Users\4poin\source\repos\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\cookDone.xnb
+C:\Users\4poin\source\repos\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\chatFoodDone.xnb
+C:\Users\4poin\source\repos\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\chatFoodNotDone.xnb

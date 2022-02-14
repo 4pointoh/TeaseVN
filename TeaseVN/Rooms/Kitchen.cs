@@ -17,6 +17,7 @@ namespace TeaseVN.Rooms
             List<Clickable> defaults = new List<Clickable>();
             defaults.Add(getCookingClickable());
             defaults.Add(getChatClickable());
+            defaults.Add(getDebugClickable());
             return defaults;
         }
         private Clickable getCookingClickable()
@@ -48,6 +49,21 @@ namespace TeaseVN.Rooms
             return chat;
         }
 
+        private Clickable getDebugClickable()
+        {
+            Clickable chat = new Clickable();
+            Rectangle rect = new Rectangle();
+            rect.X = 1000;
+            rect.Y = 600;
+            rect.Width = 50;
+            rect.Height = 50;
+            chat.clickableArea = rect;
+            chat.texture = game.Content.Load<Texture2D>("assets/ui-background-3");
+            chat.id = "Debug";
+            chat.processClick = new Clickable.clickProcessor(debugDelegate);
+            return chat;
+        }
+
         public override NextEvent roomDelegate()
         {
             NextEvent ev = new NextEvent();
@@ -58,16 +74,21 @@ namespace TeaseVN.Rooms
         public static NextEvent cookingDelegate()
         {
             NextEvent ev = new NextEvent();
-            ev.setNext(SceneStorage.FIRST_DAY_SCENE, NextEvent.SCENE_TYPE);
-            Debug.WriteLine("Running Cooking Logic");
+            ev.setNext(SceneStorage.COOKING_SCENE, NextEvent.SCENE_TYPE);
             return ev;
         }
 
         public static NextEvent chatDelegate()
         {
             NextEvent ev = new NextEvent();
-            ev.setNext(RoomStorage.DINING_ROOM, NextEvent.ROOM_TYPE);
-            Debug.WriteLine("Running Chat Logic");
+            ev.setNext(SceneStorage.CHAT_SCENE, NextEvent.SCENE_TYPE);
+            return ev;
+        }
+
+        public static NextEvent debugDelegate()
+        {
+            NextEvent ev = new NextEvent();
+            ev.setNext(SceneStorage.WORK_SCENE, NextEvent.SCENE_TYPE);
             return ev;
         }
     }
