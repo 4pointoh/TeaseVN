@@ -28,11 +28,11 @@ namespace TeaseVN.Scenes.Intro
 
         public override Panel getStartingPanel()
         {
-            if (game._flagManager.globalFlags.dinnerCooked == true)
+            if (game.eventManager.getDinnerCooked() == true)
             {
                 return this.panelsById["1"];
             }
-            else if (game._flagManager.globalFlags.dinnerCooked == false)
+            else if (game.eventManager.getDinnerCooked() == false)
             {
                 return this.panelsById["2"];
             }

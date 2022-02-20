@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TeaseVN.Scenes;
 using TeaseVN.Scenes.EatDinnerQuest;
 using TeaseVN.Scenes.Ending;
 using TeaseVN.Scenes.Intro;
@@ -21,6 +22,9 @@ namespace TeaseVN.Core
         public static String SLEEP_SCENE = "Sleep";
         public static String NO_SCENE = "NoScene";
         public static String CHAT_SCENE = "Chat";
+        public static String WASH_SCENE = "Wash";
+        public static String EAT_SCENE = "Eat";
+        public static String BEDTIME_SCENE = "Bedtime";
 
         public SceneStorage(Game1 game)
         {
@@ -34,6 +38,9 @@ namespace TeaseVN.Core
             SleepScene sleepScene = new SleepScene(game);
             CookingScene cookingScene = new CookingScene(game);
             ChatScene chatScene = new ChatScene(game);
+            WashScene washScene = new WashScene(game);
+            EatScene eatScene = new EatScene(game);
+            BedtimeScene bedtimeScene = new BedtimeScene(game);
 
             sceneById.Add(DINNER_SCENE, eatDinnerScene);
             sceneById.Add(ENDING_SCENE, endingScene);
@@ -43,6 +50,9 @@ namespace TeaseVN.Core
             sceneById.Add(SLEEP_SCENE, sleepScene);
             sceneById.Add(COOKING_SCENE, cookingScene);
             sceneById.Add(CHAT_SCENE, chatScene);
+            sceneById.Add(WASH_SCENE, washScene);
+            sceneById.Add(EAT_SCENE, eatScene);
+            sceneById.Add(BEDTIME_SCENE, bedtimeScene);
         }
 
         public Scene getScene(String id)

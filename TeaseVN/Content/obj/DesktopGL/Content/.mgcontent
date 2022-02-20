@@ -20,10 +20,14 @@
     <File>C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/assets/ui-background.png</File>
     <File>C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/assets/ui-background2.png</File>
     <File>C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/assets/ui-background-3.png</File>
+    <File>C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/BedtimeSetAlarm.png</File>
+    <File>C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/BedtimeStart.png</File>
     <File>C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/chatFoodDone.png</File>
     <File>C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/chatFoodNotDone.png</File>
     <File>C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/cook.png</File>
     <File>C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/cookDone.png</File>
+    <File>C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/EatPoorHygiene.png</File>
+    <File>C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/EatSuccess.png</File>
     <File>C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/rooms/Bathroom.png</File>
     <File>C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/rooms/BathroomIcon.png</File>
     <File>C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/rooms/Bed.png</File>
@@ -33,8 +37,14 @@
     <File>C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/rooms/Kitchen.png</File>
     <File>C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/rooms/KitchenIcon.png</File>
     <File>C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/SceneTemplate.png</File>
+    <File>C:/Users/4poin/source/repos/TeaseVN/TeaseVN/Content/wash.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

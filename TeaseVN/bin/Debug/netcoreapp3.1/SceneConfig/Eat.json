@@ -1,0 +1,21 @@
+﻿{
+  "scene": "Eat",
+  "panels": [
+    {
+      "id": "1",
+      "image": "EatPoorHygiene",
+      "text": "Sister: You smell terrible, we're not eating until you wash yourself."
+    },
+    {
+      "id": "2",
+      "image": "EatSuccess",
+      "text": "Sister: Thanks for cleaning up, let's eat!",
+      "guaranteedNextPanelId": "3"
+    },
+    {
+      "id": "3",
+      "image": "EatSuccess",
+      "text": "Sister: That was delicious! Thanks for cooking it bro. My turn tomorrow night."
+    }
+  ]
+}

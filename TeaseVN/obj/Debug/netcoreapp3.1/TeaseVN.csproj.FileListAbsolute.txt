@@ -53,3 +53,8 @@ C:\Users\4poin\source\repos\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\cook
 C:\Users\4poin\source\repos\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\cookDone.xnb
 C:\Users\4poin\source\repos\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\chatFoodDone.xnb
 C:\Users\4poin\source\repos\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\chatFoodNotDone.xnb
+C:\Users\4poin\source\repos\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\wash.xnb
+C:\Users\4poin\source\repos\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\EatPoorHygiene.xnb
+C:\Users\4poin\source\repos\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\EatSuccess.xnb
+C:\Users\4poin\source\repos\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\BedtimeSetAlarm.xnb
+C:\Users\4poin\source\repos\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\BedtimeStart.xnb

@@ -32,6 +32,7 @@ namespace TeaseVN.Core
             public int pokerSkill { get; set; }
             public int yogaSkill { get; set; }
             public int fashionSkill { get; set; }
+
         }
 
         public class CharacterFlags

@@ -16,11 +16,16 @@ namespace TeaseVN.Core
         public Room(Game1 curGame)
         {
             game = curGame;
-            this.clickableItems = new List<Clickable>();
-            this.clickableItems.AddRange(getDefaultClickables());
+            refreshRoom();
         }
 
-        protected virtual List<Clickable> getDefaultClickables()
+        public void refreshRoom()
+        {
+            this.clickableItems = new List<Clickable>();
+            this.clickableItems.AddRange(getClickables());
+        }
+
+        protected virtual List<Clickable> getClickables()
         {
             return new List<Clickable>();
         }

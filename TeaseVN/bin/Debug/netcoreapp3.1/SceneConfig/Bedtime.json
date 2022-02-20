@@ -1,0 +1,22 @@
+﻿{
+  "scene": "Bedtime",
+  "panels": [
+    {
+      "id": "1",
+      "image": "BedtimeStart",
+      "text": "I guess I'll go to sleep for the night.",
+      "guaranteedNextPanelId": "2"
+    },
+    {
+      "id": "2",
+      "image": "BedtimeSetAlarm",
+      "text": "Let me set my alarm for 8am...",
+      "guaranteedNextPanelId": "3"
+    },
+    {
+      "id": "3",
+      "image": "BedtimeStart",
+      "text": "All set, time for bed."
+    }
+  ]
+}

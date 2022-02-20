@@ -12,7 +12,7 @@ namespace TeaseVN.Rooms
     class Kitchen : Room
     {
         public Kitchen(Game1 game) : base(game) { }
-        protected override List<Clickable> getDefaultClickables()
+        protected override List<Clickable> getClickables()
         {
             List<Clickable> defaults = new List<Clickable>();
             defaults.Add(getCookingClickable());

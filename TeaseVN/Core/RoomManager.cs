@@ -29,6 +29,7 @@ namespace TeaseVN.Core
 
         public void setCurrentRoom(Room room)
         {
+            room.refreshRoom();
             this.currentRoom = room;
         }
 
@@ -78,7 +79,7 @@ namespace TeaseVN.Core
 
         private void setCurrentTravelOptions()
         {
-            var roomById = game._roomStorage.roomById;
+            var roomById = game.roomStorage.roomById;
 
             Rectangle gameBounds = game.GraphicsDevice.Viewport.Bounds;
 

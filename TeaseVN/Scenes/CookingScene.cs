@@ -25,8 +25,7 @@ namespace TeaseVN.Scenes.Intro
         {
             if (this.currentPanel.id == "1")
             {
-                game._flagManager.globalFlags.dinnerCooked = true;
-                Debug.WriteLine("Dinner has been cooked.");
+                game.eventManager.setDinnerCooked(true);
             }
         }
     }
