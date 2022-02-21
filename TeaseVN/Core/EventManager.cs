@@ -39,5 +39,14 @@ namespace TeaseVN.Core
         {
             return game.flagManager.playerFlags.cleanliness > 0;
         }
+
+        public void workoutEvent()
+        {
+            this.game.flagManager.playerFlags.cleanliness -= 10;
+            if (this.game.flagManager.playerFlags.cleanliness < 0)
+            {
+                this.game.flagManager.playerFlags.cleanliness = 0;
+            }
+        }
     }
 }

@@ -352,11 +352,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\4poin\\source\\repos\\TeaseVN\\TeaseVN\\TeaseVN.csproj",
+      "projectUniqueName": "C:\\Users\\4poin\\Desktop\\TeaseVN\\project\\source\\repos\\TeaseVN\\TeaseVN\\TeaseVN.csproj",
       "projectName": "TeaseVN",
-      "projectPath": "C:\\Users\\4poin\\source\\repos\\TeaseVN\\TeaseVN\\TeaseVN.csproj",
+      "projectPath": "C:\\Users\\4poin\\Desktop\\TeaseVN\\project\\source\\repos\\TeaseVN\\TeaseVN\\TeaseVN.csproj",
       "packagesPath": "C:\\Users\\4poin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\4poin\\source\\repos\\TeaseVN\\TeaseVN\\obj\\",
+      "outputPath": "C:\\Users\\4poin\\Desktop\\TeaseVN\\project\\source\\repos\\TeaseVN\\TeaseVN\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\4poin\\AppData\\Roaming\\NuGet\\NuGet.Config",

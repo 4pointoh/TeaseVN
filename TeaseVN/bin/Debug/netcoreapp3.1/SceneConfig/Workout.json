@@ -1,0 +1,28 @@
+﻿{
+  "scene": "Workout",
+  "panels": [
+    {
+      "id": "1",
+      "image": "WorkoutStart",
+      "text": "I think I'll lift some weights.",
+      "guaranteedNextPanelId": "2"
+    },
+    {
+      "id": "2",
+      "image": "WorkoutStart",
+      "text": "I'll do the 20lb hand weights today",
+      "guaranteedNextPanelId": "3"
+    },
+    {
+      "id": "3",
+      "image": "WorkoutStart",
+      "text": "...",
+      "guaranteedNextPanelId": "4"
+    },
+    {
+      "id": "4",
+      "image": "WorkoutFinish",
+      "text": "I gained 10 muscle!"
+    }
+  ]
+}

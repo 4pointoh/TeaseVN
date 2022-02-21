@@ -25,6 +25,7 @@ namespace TeaseVN.Core
         public static String WASH_SCENE = "Wash";
         public static String EAT_SCENE = "Eat";
         public static String BEDTIME_SCENE = "Bedtime";
+        public static String WORKOUT_SCENE = "Workout";
 
         public SceneStorage(Game1 game)
         {
@@ -41,6 +42,7 @@ namespace TeaseVN.Core
             WashScene washScene = new WashScene(game);
             EatScene eatScene = new EatScene(game);
             BedtimeScene bedtimeScene = new BedtimeScene(game);
+            WorkoutScene workoutScene = new WorkoutScene(game);
 
             sceneById.Add(DINNER_SCENE, eatDinnerScene);
             sceneById.Add(ENDING_SCENE, endingScene);
@@ -53,6 +55,7 @@ namespace TeaseVN.Core
             sceneById.Add(WASH_SCENE, washScene);
             sceneById.Add(EAT_SCENE, eatScene);
             sceneById.Add(BEDTIME_SCENE, bedtimeScene);
+            sceneById.Add(WORKOUT_SCENE, workoutScene);
         }
 
         public Scene getScene(String id)

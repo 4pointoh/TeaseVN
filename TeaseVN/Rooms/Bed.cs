@@ -21,6 +21,7 @@ namespace TeaseVN.Rooms
         {
             List<Clickable> clickables = new List<Clickable>();
             clickables.Add(getBedtimeClickable());
+            clickables.Add(getWorkoutClickable());
             return clickables;
         }
         private Clickable getBedtimeClickable()
@@ -42,6 +43,28 @@ namespace TeaseVN.Rooms
         {
             NextEvent ev = new NextEvent();
             ev.setNext(SceneStorage.BEDTIME_SCENE, NextEvent.SCENE_TYPE);
+            return ev;
+        }
+
+        private Clickable getWorkoutClickable()
+        {
+            Clickable workout = new Clickable();
+            Rectangle rect = new Rectangle();
+            rect.X = 100;
+            rect.Y = 300;
+            rect.Width = 200;
+            rect.Height = 200;
+            workout.clickableArea = rect;
+            workout.texture = game.Content.Load<Texture2D>("assets/ui-background-3");
+            workout.id = "Workout";
+            workout.processClick = new Clickable.clickProcessor(workoutDelegate);
+            return workout;
+        }
+
+        public static NextEvent workoutDelegate()
+        {
+            NextEvent ev = new NextEvent();
+            ev.setNext(SceneStorage.WORKOUT_SCENE, NextEvent.SCENE_TYPE);
             return ev;
         }
     }
