@@ -11,7 +11,7 @@ namespace TeaseVN
     {
         public static String formatText(String text, SpriteFont font, int maxLength)
         {
-            //Provided string is less than 1 line in length
+            //Provided string is less than 1 line in length.
             Vector2 currentSize = font.MeasureString(text);
             if (currentSize.Length() <= maxLength)
             {
