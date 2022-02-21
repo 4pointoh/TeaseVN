@@ -37,11 +37,15 @@
     <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/rooms/Kitchen.png</File>
     <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/rooms/KitchenIcon.png</File>
     <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/SceneTemplate.png</File>
+    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/TempJobFinish.png</File>
+    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/TempJobStart.png</File>
     <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/wash.png</File>
     <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/WorkoutFinish.png</File>
     <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/WorkoutStart.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

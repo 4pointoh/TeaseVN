@@ -122,3 +122,5 @@ C:\Users\4poin\Desktop\TeaseVN\project\source\repos\TeaseVN\TeaseVN\obj\Debug\ne
 C:\Users\4poin\Desktop\TeaseVN\project\source\repos\TeaseVN\TeaseVN\obj\Debug\netcoreapp3.1\TeaseVN.dll
 C:\Users\4poin\Desktop\TeaseVN\project\source\repos\TeaseVN\TeaseVN\obj\Debug\netcoreapp3.1\TeaseVN.pdb
 C:\Users\4poin\Desktop\TeaseVN\project\source\repos\TeaseVN\TeaseVN\obj\Debug\netcoreapp3.1\TeaseVN.genruntimeconfig.cache
+C:\Users\4poin\Desktop\TeaseVN\project\source\repos\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\TempJobFinish.xnb
+C:\Users\4poin\Desktop\TeaseVN\project\source\repos\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\TempJobStart.xnb

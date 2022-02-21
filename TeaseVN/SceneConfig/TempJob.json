@@ -1,0 +1,22 @@
+﻿{
+  "scene": "TempJob",
+  "panels": [
+    {
+      "id": "1",
+      "image": "TempJobStart",
+      "text": "I'm going to work on my temporary job today.",
+      "guaranteedNextPanelId": "2"
+    },
+    {
+      "id": "2",
+      "image": "TempJobStart",
+      "text": "...",
+      "guaranteedNextPanelId": "3"
+    },
+    {
+      "id": "3",
+      "image": "TempJobFinish",
+      "text": "I earned $10"
+    }
+  ]
+}

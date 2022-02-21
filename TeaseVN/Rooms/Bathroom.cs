@@ -22,6 +22,7 @@ namespace TeaseVN.Rooms
         {
             List<Clickable> defaults = new List<Clickable>();
             defaults.Add(getWashClickable());
+            defaults.Add(getTempJobClickable());
             return defaults;
         }
         private Clickable getWashClickable()
@@ -43,6 +44,28 @@ namespace TeaseVN.Rooms
         {
             NextEvent ev = new NextEvent();
             ev.setNext(SceneStorage.WASH_SCENE, NextEvent.SCENE_TYPE);
+            return ev;
+        }
+
+        private Clickable getTempJobClickable()
+        {
+            Clickable tempJob = new Clickable();
+            Rectangle rect = new Rectangle();
+            rect.X = 50;
+            rect.Y = 400;
+            rect.Width = 200;
+            rect.Height = 200;
+            tempJob.clickableArea = rect;
+            tempJob.texture = game.Content.Load<Texture2D>("assets/ui-background-3");
+            tempJob.id = "TempJob";
+            tempJob.processClick = new Clickable.clickProcessor(tempJobDelegate);
+            return tempJob;
+        }
+
+        public static NextEvent tempJobDelegate()
+        {
+            NextEvent ev = new NextEvent();
+            ev.setNext(SceneStorage.TEMP_JOB_SCENE, NextEvent.SCENE_TYPE);
             return ev;
         }
     }
