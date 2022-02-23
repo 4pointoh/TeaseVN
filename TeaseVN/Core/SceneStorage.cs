@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using TeaseVN.Scenes;
 using TeaseVN.Scenes.EatDinnerQuest;
 using TeaseVN.Scenes.Ending;
@@ -11,7 +10,7 @@ namespace TeaseVN.Core
 {
     class SceneStorage
     {
-        Dictionary<String, Scene> sceneById;
+        Dictionary<String, Type> sceneTypeById;
         Game1 game;
 
         public static String COOKING_SCENE = "Cooking";
@@ -31,39 +30,31 @@ namespace TeaseVN.Core
         public SceneStorage(Game1 game)
         {
             this.game = game;
-            this.sceneById = new Dictionary<string, Scene>();
-            EatDinnerScene eatDinnerScene = new EatDinnerScene(game);
-            EndingScene endingScene = new EndingScene(game);
-            FirstDayChoiceScene firstDayChoiceScene = new FirstDayChoiceScene(game);
-            GoToWorkScene goToWorkScene = new GoToWorkScene(game);
-            NoScene noScene = new NoScene(game);
-            SleepScene sleepScene = new SleepScene(game);
-            CookingScene cookingScene = new CookingScene(game);
-            ChatScene chatScene = new ChatScene(game);
-            WashScene washScene = new WashScene(game);
-            EatScene eatScene = new EatScene(game);
-            BedtimeScene bedtimeScene = new BedtimeScene(game);
-            WorkoutScene workoutScene = new WorkoutScene(game);
-            TempJobScene tempJobScene = new TempJobScene(game);
+            this.sceneTypeById = new Dictionary<string, Type>();
 
-            sceneById.Add(DINNER_SCENE, eatDinnerScene);
-            sceneById.Add(ENDING_SCENE, endingScene);
-            sceneById.Add(FIRST_DAY_SCENE, firstDayChoiceScene);
-            sceneById.Add(WORK_SCENE, goToWorkScene);
-            sceneById.Add(NO_SCENE, noScene);
-            sceneById.Add(SLEEP_SCENE, sleepScene);
-            sceneById.Add(COOKING_SCENE, cookingScene);
-            sceneById.Add(CHAT_SCENE, chatScene);
-            sceneById.Add(WASH_SCENE, washScene);
-            sceneById.Add(EAT_SCENE, eatScene);
-            sceneById.Add(BEDTIME_SCENE, bedtimeScene);
-            sceneById.Add(WORKOUT_SCENE, workoutScene);
-            sceneById.Add(TEMP_JOB_SCENE, tempJobScene);
+            sceneTypeById.Add(DINNER_SCENE, typeof(EatDinnerScene));
+            sceneTypeById.Add(ENDING_SCENE, typeof(EndingScene));
+            sceneTypeById.Add(FIRST_DAY_SCENE, typeof(FirstDayChoiceScene));
+            sceneTypeById.Add(WORK_SCENE, typeof(GoToWorkScene));
+            sceneTypeById.Add(NO_SCENE, typeof(NoScene));
+            sceneTypeById.Add(SLEEP_SCENE, typeof(SleepScene));
+            sceneTypeById.Add(COOKING_SCENE, typeof(CookingScene));
+            sceneTypeById.Add(CHAT_SCENE, typeof(ChatScene));
+            sceneTypeById.Add(WASH_SCENE, typeof(WashScene));
+            sceneTypeById.Add(EAT_SCENE, typeof(EatScene));
+            sceneTypeById.Add(BEDTIME_SCENE, typeof(BedtimeScene));
+            sceneTypeById.Add(WORKOUT_SCENE, typeof(WorkoutScene));
+            sceneTypeById.Add(TEMP_JOB_SCENE, typeof(TempJobScene));
         }
 
         public Scene getScene(String id)
         {
-            return sceneById[id];
+            if (!sceneTypeById.ContainsKey(id))
+            {
+                return null;
+            }
+
+            return (Scene) Activator.CreateInstance(sceneTypeById[id], this.game);
         }
     }
 }

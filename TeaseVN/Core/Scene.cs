@@ -42,11 +42,7 @@ namespace TeaseVN
 
         public void initializeScene()
         {
-            this.sceneComplete = false;
             this.currentPanel = getStartingPanel();
-            this.selectedChoice = -1;
-            this.sceneFlags = new Dictionary<string, bool>();
-            this.currentPanelHasChoice = false;
         }
 
         public abstract Panel getNextPanel();
