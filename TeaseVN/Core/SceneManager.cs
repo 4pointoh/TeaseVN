@@ -29,6 +29,8 @@ namespace TeaseVN
 
         //Other
         public Boolean hasActiveScene { get; set; }
+        private bool isInSceneThisFrame = true;
+        private bool wasInSceneLastFrame = true;
 
         public SceneManager(Game1 game, Scene firstScene)
         {
@@ -43,6 +45,18 @@ namespace TeaseVN
             prepareDialogueBox();
             refreshDialogueBoxText();
         }
+
+        public void update()
+        {
+            this.wasInSceneLastFrame = this.isInSceneThisFrame;
+            this.isInSceneThisFrame = this.hasActiveScene;
+        }
+
+        public bool returnedToRoom()
+        {
+            return this.wasInSceneLastFrame && !this.isInSceneThisFrame;
+        }
+
         private void prepareDialogueBox()
         {
             this.dialogueBox = new DialogueBox();
@@ -71,7 +85,7 @@ namespace TeaseVN
         public void refreshDialogueBoxText()
         {
             String text = currentScene.getSceneText();
-            this.dialogueBox.boxText = TextBlockHelper.formatText(text, this.game.font, this.dialogueBox.boxRect.Width - 10);
+            this.dialogueBox.boxText = TextBlockHelper.formatText(text, this.game.uiManager.font, this.dialogueBox.boxRect.Width - 10);
         }
         
         public void setChoiceButtonClicked(int buttonId)
@@ -161,14 +175,15 @@ namespace TeaseVN
 
             return buttons;
         }
-        public bool processHoveredButtons(MouseState mouseState)
+        public void processHoveredButtons(MouseState mouseState)
         {
             foreach (Button choiceButton in this.currentSceneChoiceButtons)
             {
-                if (SceneUiHelper.buttonIsHovered(mouseState, choiceButton))
+                if (UiManager.buttonIsHovered(mouseState, choiceButton))
                 {
                     this.setChoiceButtonHovered(choiceButton.id);
-                    return true;
+                    this.game.uiManager.enablePointerCursor();
+                    return;
                 }
                 else
                 {
@@ -176,14 +191,14 @@ namespace TeaseVN
                 }
             }
 
-            return false;
+            this.game.uiManager.disablePointerCursor();
         }
         public NextEvent processClickedButtons(MouseState mouseState)
         {
             NextEvent ev = null;
             foreach (Button choiceButton in this.currentSceneChoiceButtons)
             {
-                if (SceneUiHelper.buttonIsHovered(mouseState, choiceButton))
+                if (UiManager.buttonIsHovered(mouseState, choiceButton))
                 {
                     this.setChoiceButtonClicked(choiceButton.id);
                     break;

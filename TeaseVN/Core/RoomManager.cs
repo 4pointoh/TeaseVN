@@ -33,6 +33,11 @@ namespace TeaseVN.Core
             this.currentRoom = room;
         }
 
+        public void refreshCurrentRoom()
+        {
+            this.currentRoom.refreshRoom();
+        }
+
         public Texture2D getCurrentBackground()
         {
             return currentRoom.backgroundTexture;
@@ -46,24 +51,25 @@ namespace TeaseVN.Core
             return allClickables;
         }
 
-        public bool processHoveredClickables(MouseState mouseState)
+        public void processHoveredClickables(MouseState mouseState)
         {
             foreach (Clickable item in this.getCurrentRoomClickables())
             {
-                if (SceneUiHelper.clickableIsHovered(mouseState, item))
+                if (UiManager.clickableIsHovered(mouseState, item))
                 {
-                    return true;
+                    this.game.uiManager.enablePointerCursor();
+                    return;
                 }
             }
 
-            return false;
+            this.game.uiManager.disablePointerCursor();
         }
 
         public NextEvent processClickedClickables(MouseState mouseState)
         {
             foreach (Clickable item in this.getCurrentRoomClickables())
             {
-                if (SceneUiHelper.clickableIsHovered(mouseState, item))
+                if (UiManager.clickableIsHovered(mouseState, item))
                 {
                     return item.processClick();
                 }

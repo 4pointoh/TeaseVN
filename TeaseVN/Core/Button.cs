@@ -6,7 +6,7 @@ using System.Text;
 
 namespace TeaseVN
 {
-    class Button
+    public class Button
     {
         public Texture2D buttonTexture;
         public String buttonText;

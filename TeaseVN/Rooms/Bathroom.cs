@@ -20,10 +20,14 @@ namespace TeaseVN.Rooms
 
         protected override List<Clickable> getClickables()
         {
-            List<Clickable> defaults = new List<Clickable>();
-            defaults.Add(getWashClickable());
-            defaults.Add(getTempJobClickable());
-            return defaults;
+            List<Clickable> clickables = new List<Clickable>();
+            clickables.Add(getWashClickable());
+
+            if (game.eventManager.getTempJobAvailable())
+            {
+                clickables.Add(getTempJobClickable());
+            }
+            return clickables;
         }
         private Clickable getWashClickable()
         {

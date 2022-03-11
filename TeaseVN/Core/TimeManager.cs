@@ -6,35 +6,24 @@ namespace TeaseVN.Core
 {
     public class TimeManager
     {
-        int MAX_TIME = 24; // 8 = 8am 
-        int MAX_DAY = 7; // 1 = Sun, 7 = Sat
-        public int day { get; set; }
-        public int hour { get; set; }
+        public int day = 1;
+        public int hour = 8;
+        public String dayOfWeek = "Saturday";
 
-        public bool progressHour(int hoursToAdd)
-        {
-            if(hoursToAdd + hour > MAX_TIME)
-            {
-                return false;
-            }
-            else
-            {
-                hour += hoursToAdd;
-                return true;
-            }
-        }
+        public DateTime time = new System.DateTime(2000, 1, 1, 8, 0, 0, 0);
 
-        public void nextDay()
+        public void progressHour(int hoursToAdd)
         {
-            if(day == MAX_DAY)
-            {
-                day = 1;
-            }
-            else
+            int previousDay = time.Day;
+            time = time.AddHours(hoursToAdd);
+            int nextDay = time.Day;
+
+            if(previousDay != nextDay)
             {
                 day++;
             }
-            hour = 8;
+            dayOfWeek = time.DayOfWeek.ToString();
+            hour = time.Hour;
         }
     }
 }

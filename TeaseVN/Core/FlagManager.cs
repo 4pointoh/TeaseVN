@@ -11,12 +11,23 @@ namespace TeaseVN.Core
         public CharacterFlags characterFlags;
         public SceneFlags sceneFlags;
 
+        private const int MAX_CLEANLINESS = 100;
+
         public FlagManager()
         {
             globalFlags = new GlobalFlags();
             playerFlags = new PlayerFlags();
             characterFlags = new CharacterFlags();
             sceneFlags = new SceneFlags();
+        }
+
+        public void increaseCleanliness(int amount)
+        {
+            this.playerFlags.cleanliness += 10;
+            if (this.playerFlags.cleanliness > MAX_CLEANLINESS)
+            {
+                this.playerFlags.cleanliness = MAX_CLEANLINESS;
+            }
         }
 
         public class PlayerFlags

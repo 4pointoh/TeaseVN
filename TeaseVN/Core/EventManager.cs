@@ -13,11 +13,13 @@ namespace TeaseVN.Core
         }
         public void washEvent()
         {
-            this.game.flagManager.playerFlags.cleanliness += 10;
-            if(this.game.flagManager.playerFlags.cleanliness > 100)
-            {
-                this.game.flagManager.playerFlags.cleanliness = 100;
-            }
+            this.game.flagManager.increaseCleanliness(10);
+            this.game.timeManager.progressHour(2);
+        }
+
+        public bool getTempJobAvailable()
+        {
+            return (this.game.timeManager.hour > 10 && this.game.timeManager.hour < 16);
         }
 
         public void setDinnerCooked(bool cooked)

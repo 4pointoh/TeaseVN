@@ -8,24 +8,38 @@ using TeaseVN.Scenes.Intro;
 
 namespace TeaseVN
 {
+    /*
+ * TO DO 
+ * 
+ * Refactor choices into clickables
+ * Saves
+ * Quest management
+ * Inventory system
+ * Ability to "pick up" items
+ * Quest progress based on inventory
+ * "Computer" training etc...
+ * Stats screen player can see
+ * Different characters for different dialogue
+ */
+
     public class Game1 : Game
     {
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
+        
         private SceneManager sceneManager;
         private RoomManager roomManager;
+
+        public UiManager uiManager;
         public FlagManager flagManager;
         public EventManager eventManager;
         public TimeManager timeManager;
-        private SceneStorage sceneStorage;
+        
         public RoomStorage roomStorage;
-        public SpriteFont font;
+        private SceneStorage sceneStorage;
+
+        //Debug
         private FrameCounter frameCounter = new FrameCounter();
-        private Rectangle backgroundRectangle;
-        private MouseState currentMouseState = Mouse.GetState();
-        private Texture2D cursorPointer;
-        private Vector2 cursorPos;
-        public bool usePointerCursor;
         public bool debugMode = true;
 
         public Game1()
@@ -44,15 +58,14 @@ namespace TeaseVN
             graphics.PreferredBackBufferWidth = 1280;
             graphics.PreferredBackBufferHeight = 720;
             graphics.ApplyChanges();
-            this.backgroundRectangle = GraphicsDevice.Viewport.Bounds;
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            font = Content.Load<SpriteFont>("assets/font");
-            cursorPointer = Content.Load<Texture2D>("assets/hand-cursor");
+            uiManager = new UiManager(this);
+
             flagManager = new FlagManager();
             timeManager = new TimeManager();
             eventManager = new EventManager(this);
@@ -64,43 +77,36 @@ namespace TeaseVN
 
         protected override void Update(GameTime gameTime)
         {
-            MouseState lastMouseState = this.currentMouseState;
-            this.currentMouseState = Mouse.GetState();
-            cursorPos = new Vector2(this.currentMouseState.X, this.currentMouseState.Y);
-            NextEvent nextEvent = null;
+            this.uiManager.update();
+            this.sceneManager.update();
+            MouseState currentMouseState = Mouse.GetState();
 
+            NextEvent nextEvent = null;
 
             if (sceneManager.hasActiveScene)
             {
                 //SCENE LOGIC BLOCK
-
-                //******* UI RESPONSE *******//
-                //**************************//
-                usePointerCursor = sceneManager.processHoveredButtons(this.currentMouseState);
-
-                //****** HANDLE INPUT*******//
-                //*************************//
+                sceneManager.processHoveredButtons(currentMouseState);
 
                 //Left Click
-                if (lastMouseState.LeftButton == ButtonState.Released && this.currentMouseState.LeftButton == ButtonState.Pressed)
+                if (this.uiManager.leftMouseClicked())
                 {
-                    //TBD shift this to similar logic as the room manager
-                    nextEvent = sceneManager.processClickedButtons(this.currentMouseState);
+                    nextEvent = sceneManager.processClickedButtons(currentMouseState);
                 }
             }
             else
             {
                 //ROOM LOGIC BLOCK
-                usePointerCursor = roomManager.processHoveredClickables(this.currentMouseState);
+                roomManager.processHoveredClickables(currentMouseState);
 
                 //Left Click
-                if (lastMouseState.LeftButton == ButtonState.Released && this.currentMouseState.LeftButton == ButtonState.Pressed)
+                if (this.uiManager.leftMouseClicked())
                 {
-                    nextEvent = roomManager.processClickedClickables(this.currentMouseState);
+                    nextEvent = roomManager.processClickedClickables(currentMouseState);
                 }
             }
 
-            if(nextEvent != null)
+            if (nextEvent != null)
             {
                 if (nextEvent.nextEventIsRoom)
                 {
@@ -113,22 +119,17 @@ namespace TeaseVN
                 }
             }
 
+            //We were in a scene & now we aren't
+            if(this.sceneManager.returnedToRoom())
+            {
+                this.roomManager.refreshCurrentRoom();
+            }
 
             //Esc
-            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
+            if (this.uiManager.escapeKeyPressed())
             {
                 Exit();
                 //TBD - autosave here
-            }
-
-
-            if (usePointerCursor)
-            {
-                SceneUiHelper.setCursorToPointer(this);
-            }
-            else
-            {
-                SceneUiHelper.setCursorToDefault(this);
             }
 
             //******* DEBUG LOGIC ********//
@@ -149,24 +150,24 @@ namespace TeaseVN
             {
                 //SCENE LOGIC
                 //Actual background image
-                spriteBatch.Draw(sceneManager.getCurrentBackground(), this.backgroundRectangle, Color.White);
+                spriteBatch.Draw(sceneManager.getCurrentBackground(), this.uiManager.backgroundRectangle, Color.White);
 
                 //Draw choice buttons
                 foreach (Button choiceButton in sceneManager.currentSceneChoiceButtons)
                 {
                     spriteBatch.Draw(choiceButton.buttonTexture, choiceButton.buttonRect, Color.White);
-                    spriteBatch.DrawString(font, choiceButton.buttonText, choiceButton.buttonPosition, Color.White);
+                    spriteBatch.DrawString(this.uiManager.font, choiceButton.buttonText, choiceButton.buttonPosition, Color.White);
                 }
 
                 //Draw dialogue box
                 spriteBatch.Draw(sceneManager.dialogueBox.boxTexture, sceneManager.dialogueBox.boxRect, Color.White);
-                spriteBatch.DrawString(font, sceneManager.dialogueBox.boxText, sceneManager.dialogueBox.textPosition, Color.White);
+                spriteBatch.DrawString(this.uiManager.font, sceneManager.dialogueBox.boxText, sceneManager.dialogueBox.textPosition, Color.White);
 
             }
             else
             {
                 //ROOM LOGIC
-                spriteBatch.Draw(roomManager.getCurrentBackground(), this.backgroundRectangle, Color.White);
+                spriteBatch.Draw(roomManager.getCurrentBackground(), this.uiManager.backgroundRectangle, Color.White);
 
                 foreach(Clickable item in roomManager.getCurrentRoomClickables())
                 {
@@ -179,10 +180,14 @@ namespace TeaseVN
                 }
             }
 
-            if (this.usePointerCursor)
+            if (this.uiManager.usePointerCursor)
             {
-                spriteBatch.Draw(cursorPointer, cursorPos, Color.White);
+                spriteBatch.Draw(this.uiManager.cursorPointer, this.uiManager.cursorPosition, Color.White);
             }
+
+            spriteBatch.DrawString(this.uiManager.font, timeManager.hour.ToString(), this.uiManager.timePosition, Color.Green);
+            spriteBatch.DrawString(this.uiManager.font, timeManager.dayOfWeek.ToString(), this.uiManager.dayPosition, Color.Green);
+            spriteBatch.DrawString(this.uiManager.font, timeManager.day.ToString(), this.uiManager.dayCountPosition, Color.Green);
 
             //******* DEBUG LOGIC ********//
             //***************************//
@@ -190,14 +195,14 @@ namespace TeaseVN
             if (debugMode)
             {
                 int currentYPos = 20;
-                spriteBatch.DrawString(font, "Cleanliness: " + this.flagManager.playerFlags.cleanliness.ToString(), new Vector2(1, currentYPos), Color.Red);
+                spriteBatch.DrawString(this.uiManager.font, "Cleanliness: " + this.flagManager.playerFlags.cleanliness.ToString(), new Vector2(1, currentYPos), Color.Red);
                 currentYPos = 40;
-                spriteBatch.DrawString(font, "Dinner Cooked: " + this.flagManager.globalFlags.dinnerCooked.ToString(), new Vector2(1, currentYPos), Color.Black);
+                spriteBatch.DrawString(this.uiManager.font, "Dinner Cooked: " + this.flagManager.globalFlags.dinnerCooked.ToString(), new Vector2(1, currentYPos), Color.Black);
             }
 
             //FPS Counter
             var fps = string.Format("FPS: {0}", frameCounter.AverageFramesPerSecond);
-            spriteBatch.DrawString(font, fps, new Vector2(1, 1), Color.Red);
+            spriteBatch.DrawString(this.uiManager.font, fps, new Vector2(1, 1), Color.Red);
 
             spriteBatch.End();
             base.Draw(gameTime);
