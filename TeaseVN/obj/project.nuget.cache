@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jAfJdBl15eXEuk4B0SqljlC1hDOFCQy+4zPmqKxcqpA1rU871ixEw2nVE0F2ByImLaKJn2zNfcDO3SaVdKwjog==",
+  "dgSpecHash": "P9GY4Mo39+hty5b4vBKl9xGei2gEuOM4P6ApS8kPNP/8D2CevX28Uw6W3wair2hfSqV3eEeLtsSCMzxfD3j7jQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\4poin\\Desktop\\TeaseVN\\project\\source\\repos\\TeaseVN\\TeaseVN\\TeaseVN.csproj",
+  "projectFilePath": "C:\\Users\\4poin\\Desktop\\backups\\newer\\TeaseVN\\TeaseVN\\TeaseVN.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\4poin\\.nuget\\packages\\monogame.content.builder.task\\3.8.0.1641\\monogame.content.builder.task.3.8.0.1641.nupkg.sha512",
     "C:\\Users\\4poin\\.nuget\\packages\\monogame.extended\\3.8.0\\monogame.extended.3.8.0.nupkg.sha512",

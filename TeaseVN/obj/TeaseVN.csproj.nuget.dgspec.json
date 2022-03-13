@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\4poin\\Desktop\\TeaseVN\\project\\source\\repos\\TeaseVN\\TeaseVN\\TeaseVN.csproj": {}
+    "C:\\Users\\4poin\\Desktop\\backups\\newer\\TeaseVN\\TeaseVN\\TeaseVN.csproj": {}
   },
   "projects": {
-    "C:\\Users\\4poin\\Desktop\\TeaseVN\\project\\source\\repos\\TeaseVN\\TeaseVN\\TeaseVN.csproj": {
+    "C:\\Users\\4poin\\Desktop\\backups\\newer\\TeaseVN\\TeaseVN\\TeaseVN.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\4poin\\Desktop\\TeaseVN\\project\\source\\repos\\TeaseVN\\TeaseVN\\TeaseVN.csproj",
+        "projectUniqueName": "C:\\Users\\4poin\\Desktop\\backups\\newer\\TeaseVN\\TeaseVN\\TeaseVN.csproj",
         "projectName": "TeaseVN",
-        "projectPath": "C:\\Users\\4poin\\Desktop\\TeaseVN\\project\\source\\repos\\TeaseVN\\TeaseVN\\TeaseVN.csproj",
+        "projectPath": "C:\\Users\\4poin\\Desktop\\backups\\newer\\TeaseVN\\TeaseVN\\TeaseVN.csproj",
         "packagesPath": "C:\\Users\\4poin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\4poin\\Desktop\\TeaseVN\\project\\source\\repos\\TeaseVN\\TeaseVN\\obj\\",
+        "outputPath": "C:\\Users\\4poin\\Desktop\\backups\\newer\\TeaseVN\\TeaseVN\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\4poin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -26,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -37,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "MonoGame.Content.Builder.Task": {
               "target": "Package",
@@ -74,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
         }
       }
     }

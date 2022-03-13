@@ -4,44 +4,44 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/1.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/10.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/2.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/3.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/4.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/5.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/6.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/7.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/8.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/9.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/assets/dialogue-background.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/assets/font.spritefont</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/assets/hand-cursor.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/assets/ui-background.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/assets/ui-background2.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/assets/ui-background-3.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/BedtimeSetAlarm.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/BedtimeStart.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/chatFoodDone.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/chatFoodNotDone.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/cook.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/cookDone.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/EatPoorHygiene.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/EatSuccess.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/rooms/Bathroom.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/rooms/BathroomIcon.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/rooms/Bed.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/rooms/BedIcon.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/rooms/Dining Room.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/rooms/DiningRoomIcon.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/rooms/Kitchen.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/rooms/KitchenIcon.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/SceneTemplate.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/TempJobFinish.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/TempJobStart.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/wash.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/WorkoutFinish.png</File>
-    <File>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/WorkoutStart.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/1.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/10.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/2.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/3.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/4.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/5.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/6.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/7.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/8.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/9.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/assets/dialogue-background.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/assets/font.spritefont</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/assets/hand-cursor.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/assets/ui-background.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/assets/ui-background2.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/assets/ui-background-3.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/BedtimeSetAlarm.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/BedtimeStart.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/chatFoodDone.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/chatFoodNotDone.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/cook.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/cookDone.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/EatPoorHygiene.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/EatSuccess.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/rooms/Bathroom.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/rooms/BathroomIcon.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/rooms/Bed.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/rooms/BedIcon.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/rooms/Dining Room.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/rooms/DiningRoomIcon.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/rooms/Kitchen.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/rooms/KitchenIcon.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/SceneTemplate.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/TempJobFinish.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/TempJobStart.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/wash.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/WorkoutFinish.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/WorkoutStart.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

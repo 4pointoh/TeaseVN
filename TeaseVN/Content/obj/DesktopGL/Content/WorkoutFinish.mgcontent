@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/WorkoutFinish.png</SourceFile>
+  <SourceFile>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/WorkoutFinish.png</SourceFile>
   <SourceTime>2022-02-20T02:36:50.5106062-05:00</SourceTime>
-  <DestFile>C:/Users/4poin/Desktop/TeaseVN/project/source/repos/TeaseVN/TeaseVN/Content/bin/DesktopGL/Content/WorkoutFinish.xnb</DestFile>
-  <DestTime>2022-02-20T23:49:53.9496457-05:00</DestTime>
+  <DestFile>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/bin/DesktopGL/Content/WorkoutFinish.xnb</DestFile>
+  <DestTime>2022-03-12T18:33:35.9408052-05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
