@@ -1,0 +1,46 @@
+{
+    "scene":"Work",
+    "panels": [
+        {
+            "id": "1",
+            "image": "SceneTemplate",
+            "text" : "I'm at work",
+            "guaranteedNextPanelId":"2"
+        },
+        {
+            "id": "2",
+            "image": "SceneTemplate",
+            "text": "Should I clean dishes (10) or sweep floors? (20)",
+            "choices":[
+                {
+                    "choice":"Clean Dishes (10)"
+                },
+                {
+                    "choice":"Sweep Floors (20)"
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "image": "SceneTemplate",
+            "text": "I decided to clean the dishes",
+            "guaranteedNextPanelId":"4"
+        },
+        {
+            "id": "4",
+            "image": "SceneTemplate",
+            "text": "I earned $10"
+        },
+        {
+            "id": "5",
+            "image": "SceneTemplate",
+            "text": "I earned $20"
+        },
+        {
+            "id": "6",
+            "image": "SceneTemplate",
+            "text": "I decided to sweep the floors",
+            "guaranteedNextPanelId":"5"
+        }
+    ]
+}

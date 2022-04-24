@@ -1,0 +1,22 @@
+{
+    "scene":"EatDinner",
+    "panels": [
+        {
+            "id": "1",
+            "image": "4",
+            "text" : "Let's see what is for dinner.",
+            "guaranteedNextPanelId":"2"
+        },
+        {
+            "id": "2",
+            "image": "5",
+            "text": "Yum, potatoes and mash.",
+            "guaranteedNextPanelId":"3"
+        },
+        {
+            "id": "3",
+            "image": "6",
+            "text": "I'm tired now, I think I'll go to sleep."
+        }
+    ]
+}

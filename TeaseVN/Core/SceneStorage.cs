@@ -26,6 +26,8 @@ namespace TeaseVN.Core
         public static String BEDTIME_SCENE = "Bedtime";
         public static String WORKOUT_SCENE = "Workout";
         public static String TEMP_JOB_SCENE = "TempJob";
+        public static String KNIFE_SCENE = "Knife";
+        public static String FOOD_SCENE = "Food";
 
         public SceneStorage(Game1 game)
         {
@@ -45,6 +47,8 @@ namespace TeaseVN.Core
             sceneTypeById.Add(BEDTIME_SCENE, typeof(BedtimeScene));
             sceneTypeById.Add(WORKOUT_SCENE, typeof(WorkoutScene));
             sceneTypeById.Add(TEMP_JOB_SCENE, typeof(TempJobScene));
+            sceneTypeById.Add(KNIFE_SCENE, typeof(KnifeScene));
+            sceneTypeById.Add(FOOD_SCENE, typeof(FoodScene));
         }
 
         public Scene getScene(String id)

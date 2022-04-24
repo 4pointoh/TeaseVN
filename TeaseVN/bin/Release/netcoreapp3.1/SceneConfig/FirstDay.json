@@ -1,0 +1,22 @@
+{
+  "scene":"FirstDay",
+  "panels": [
+      {
+          "id": "1",
+          "image": "1",
+          "text" : "Finally I'm home.",
+          "guaranteedNextPanelId":"2"
+      },
+      {
+          "id": "2",
+          "image": "2",
+          "text": "I'm going to relax in the kitchen for a while, but I should probably get started on making dinner soon.",
+          "guaranteedNextPanelId":"3"
+      },
+      {
+          "id": "3",
+          "image": "3",
+          "text": "I see my sister in the kitche, I could chat with her, but she is going to expect me to make dinner tonight."
+      }
+  ]
+}

@@ -14,12 +14,24 @@ namespace TeaseVN
  * Refactor choices into clickables
  * Saves
  * Quest management
- * Inventory system
- * Ability to "pick up" items
- * Quest progress based on inventory
  * "Computer" training etc...
- * Stats screen player can see
  * Different characters for different dialogue
+ * 
+ * Stat UI
+ * Inventory UI
+ * Quest UI
+ * 
+ * Papercuts
+ * - Scene routing has issues
+ * Still using "return panelsById[x]"
+ * Need to remember to remove "guaranteedNextPanel" if I modify things
+ * 
+ * - Need more descriptive errors for simple things
+ * like forgetting to click the save button in the content saver
+ *
+ *- Still need to manually copy jsons to release folders
+ *
+ *- Need to remember to change a lot of things when doing a clickable
  */
 
     public class Game1 : Game

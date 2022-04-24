@@ -32,9 +32,34 @@ namespace TeaseVN.Core
             return game.flagManager.globalFlags.dinnerCooked;
         }
 
+        public void setKnifeFound(bool knifeFound)
+        {
+            game.flagManager.inventoryFlags.hasKnife = knifeFound;
+        }
+
+        public bool getKnifeFound()
+        {
+            return game.flagManager.inventoryFlags.hasKnife;
+        }
+
+        public void setFoodFound(bool foodFound)
+        {
+            game.flagManager.inventoryFlags.hasFood = foodFound;
+        }
+
+        public bool getFoodFound()
+        {
+            return game.flagManager.inventoryFlags.hasFood;
+        }
+
         public bool getEatEventAvailable()
         {
             return game.flagManager.globalFlags.dinnerCooked;
+        }
+
+        public bool getCookEventAvailable()
+        {
+            return game.flagManager.inventoryFlags.hasFood && game.flagManager.inventoryFlags.hasKnife;
         }
 
         public bool getEatEventSufficientHygiene()

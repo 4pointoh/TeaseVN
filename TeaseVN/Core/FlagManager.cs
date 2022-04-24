@@ -10,6 +10,7 @@ namespace TeaseVN.Core
         public PlayerFlags playerFlags;
         public CharacterFlags characterFlags;
         public SceneFlags sceneFlags;
+        public InventoryFlags inventoryFlags;
 
         private const int MAX_CLEANLINESS = 100;
 
@@ -19,6 +20,7 @@ namespace TeaseVN.Core
             playerFlags = new PlayerFlags();
             characterFlags = new CharacterFlags();
             sceneFlags = new SceneFlags();
+            inventoryFlags = new InventoryFlags();
         }
 
         public void increaseCleanliness(int amount)
@@ -51,6 +53,12 @@ namespace TeaseVN.Core
             public int annaAttraction { get; set; }
             public int amyAttraction { get; set; }
             public int kaliAttraction { get; set; }
+        }
+
+        public class InventoryFlags
+        {
+            public bool hasFood { get; set; }
+            public bool hasKnife { get; set; }
         }
 
         public class GlobalFlags

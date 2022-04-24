@@ -189,3 +189,6 @@ C:\Users\4poin\Desktop\backups\newer\TeaseVN\TeaseVN\obj\Debug\netcoreapp3.1\Tea
 C:\Users\4poin\Desktop\backups\newer\TeaseVN\TeaseVN\obj\Debug\netcoreapp3.1\TeaseVN.dll
 C:\Users\4poin\Desktop\backups\newer\TeaseVN\TeaseVN\obj\Debug\netcoreapp3.1\TeaseVN.pdb
 C:\Users\4poin\Desktop\backups\newer\TeaseVN\TeaseVN\obj\Debug\netcoreapp3.1\TeaseVN.genruntimeconfig.cache
+C:\Users\4poin\Desktop\backups\newer\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\FoundKnife.xnb
+C:\Users\4poin\Desktop\backups\newer\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\DinnerNeedItems.xnb
+C:\Users\4poin\Desktop\backups\newer\TeaseVN\TeaseVN\bin\Debug\netcoreapp3.1\Content\FoundFood.xnb

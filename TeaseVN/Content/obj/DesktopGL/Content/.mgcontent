@@ -26,8 +26,11 @@
     <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/chatFoodNotDone.png</File>
     <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/cook.png</File>
     <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/cookDone.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/DinnerNeedItems.png</File>
     <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/EatPoorHygiene.png</File>
     <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/EatSuccess.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/FoundFood.png</File>
+    <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/FoundKnife.png</File>
     <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/rooms/Bathroom.png</File>
     <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/rooms/BathroomIcon.png</File>
     <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/rooms/Bed.png</File>
@@ -44,6 +47,9 @@
     <File>C:/Users/4poin/Desktop/backups/newer/TeaseVN/TeaseVN/Content/WorkoutStart.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

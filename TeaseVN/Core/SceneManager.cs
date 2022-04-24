@@ -183,7 +183,7 @@ namespace TeaseVN
                 {
                     this.setChoiceButtonHovered(choiceButton.id);
                     this.game.uiManager.enablePointerCursor();
-                    return;
+                    return; 
                 }
                 else
                 {

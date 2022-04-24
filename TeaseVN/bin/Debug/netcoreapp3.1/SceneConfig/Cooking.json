@@ -1,28 +1,38 @@
 {
     "scene":"Cooking",
-    "panels": [
-        {
-            "id": "1",
-            "image": "cook",
-            "text" : "Tonight is my night to cook dinner for the family.",
-            "guaranteedNextPanelId":"2"
-        },
-        {
-            "id": "2",
-            "image": "cook",
-            "text": "We have some bangers and mash in the cupboard, I guess that will be fine.",
-            "guaranteedNextPanelId":"3"
-        },
-        {
-            "id": "3",
-            "image": "cook",
-            "text": "....",
-            "guaranteedNextPanelId":"4"
-        },
-        {
-            "id": "4",
-            "image": "cookDone",
-            "text": "Ok, dinner is prepared for later tonight."
-        }
-    ]
+  "panels": [
+    {
+      "id": "1",
+      "image": "cook",
+      "text": "Tonight is my night to cook dinner for the family.",
+    },
+    {
+      "id": "2",
+      "image": "cook",
+      "text": "I can use the food and utensils I found to cook something up.",
+      "guaranteedNextPanelId": "3"
+    },
+    {
+      "id": "3",
+      "image": "cook",
+      "text": "....",
+      "guaranteedNextPanelId": "4"
+    },
+    {
+      "id": "4",
+      "image": "cookDone",
+      "text": "Ok, dinner is prepared for later tonight."
+    },
+    {
+      "id": "5",
+      "image": "DinnerNeedItems",
+      "text": "I'm going to need something to cook, and utensils to cook with.'",
+      "guaranteedNextPanelId": "6"
+    },
+    {
+      "id": "6",
+      "image": "DinnerNeedItems",
+      "text": "I should look around the house to see if I can find anything."
+    }
+  ]
 }

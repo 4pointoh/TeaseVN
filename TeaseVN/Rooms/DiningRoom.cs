@@ -26,6 +26,17 @@ namespace TeaseVN.Rooms
             {
                 clickables.Add(getEatClickable());
             }
+
+            if(game.eventManager.getKnifeFound() == false)
+            {
+                clickables.Add(getKnifeClickable());
+            }
+
+            if (game.eventManager.getFoodFound() == false)
+            {
+                clickables.Add(getFoodClickable());
+            }
+
             return clickables;
         }
         private Clickable getEatClickable()
@@ -43,10 +54,54 @@ namespace TeaseVN.Rooms
             return eat;
         }
 
+        private Clickable getKnifeClickable()
+        {
+            Clickable eat = new Clickable();
+            Rectangle rect = new Rectangle();
+            rect.X = 200;
+            rect.Y = 200;
+            rect.Width = 200;
+            rect.Height = 200;
+            eat.clickableArea = rect;
+            eat.texture = game.Content.Load<Texture2D>("assets/ui-background-3");
+            eat.id = "Knife";
+            eat.processClick = new Clickable.clickProcessor(knifeDelegate);
+            return eat;
+        }
+
+        private Clickable getFoodClickable()
+        {
+            Clickable eat = new Clickable();
+            Rectangle rect = new Rectangle();
+            rect.X = 200;
+            rect.Y = 500;
+            rect.Width = 200;
+            rect.Height = 200;
+            eat.clickableArea = rect;
+            eat.texture = game.Content.Load<Texture2D>("assets/ui-background-3");
+            eat.id = "Food";
+            eat.processClick = new Clickable.clickProcessor(foodDelegate);
+            return eat;
+        }
+
         public static NextEvent eatDelegate()
         {
             NextEvent ev = new NextEvent();
             ev.setNext(SceneStorage.EAT_SCENE, NextEvent.SCENE_TYPE);
+            return ev;
+        }
+
+        public static NextEvent knifeDelegate()
+        {
+            NextEvent ev = new NextEvent();
+            ev.setNext(SceneStorage.KNIFE_SCENE, NextEvent.SCENE_TYPE);
+            return ev;
+        }
+
+        public static NextEvent foodDelegate()
+        {
+            NextEvent ev = new NextEvent();
+            ev.setNext(SceneStorage.FOOD_SCENE, NextEvent.SCENE_TYPE);
             return ev;
         }
     }

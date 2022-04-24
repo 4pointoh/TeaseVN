@@ -13,7 +13,18 @@ namespace TeaseVN.Scenes.Intro
 
         public override Panel getNextPanel()
         {
-            if (this.currentPanel.id == "4")
+            if(this.currentPanel.id == "1")
+            {
+                if(!this.game.eventManager.getCookEventAvailable())
+                {
+                    return panelsById["5"];
+                }
+                else
+                {
+                    return panelsById["2"];
+                }
+            }
+            if (this.currentPanel.id == "4" || this.currentPanel.id == "6")
             {
                 setNextSceneId(SceneStorage.NO_SCENE);
             }
@@ -23,7 +34,7 @@ namespace TeaseVN.Scenes.Intro
 
         public override void handlePanelEvents()
         {
-            if (this.currentPanel.id == "1")
+            if (this.currentPanel.id == "4")
             {
                 game.eventManager.setDinnerCooked(true);
             }

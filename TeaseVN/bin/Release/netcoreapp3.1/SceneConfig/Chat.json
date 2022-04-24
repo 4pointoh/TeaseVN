@@ -1,0 +1,15 @@
+{
+    "scene":"Chat",
+    "panels": [
+        {
+            "id": "1",
+            "image": "chatFoodDone",
+            "text" : "Thanks for making dinner tonight bro :)"
+        },
+        {
+            "id": "2",
+            "image": "chatFoodNotDone",
+            "text": "Shouldn't you be making dinner? It's your turn tonight, remember."
+        }
+    ]
+}

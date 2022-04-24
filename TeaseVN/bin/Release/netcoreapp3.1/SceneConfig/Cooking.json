@@ -1,0 +1,28 @@
+{
+    "scene":"Cooking",
+    "panels": [
+        {
+            "id": "1",
+            "image": "cook",
+            "text" : "Tonight is my night to cook dinner for the family.",
+            "guaranteedNextPanelId":"2"
+        },
+        {
+            "id": "2",
+            "image": "cook",
+            "text": "We have some bangers and mash in the cupboard, I guess that will be fine.",
+            "guaranteedNextPanelId":"3"
+        },
+        {
+            "id": "3",
+            "image": "cook",
+            "text": "....",
+            "guaranteedNextPanelId":"4"
+        },
+        {
+            "id": "4",
+            "image": "cookDone",
+            "text": "Ok, dinner is prepared for later tonight."
+        }
+    ]
+}

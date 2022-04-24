@@ -1,0 +1,16 @@
+{
+  "scene": "Wash",
+  "panels": [
+    {
+      "id": "1",
+      "image": "wash",
+      "text": "I'll go ahead and take a shower.",
+      "guaranteedNextPanelId": "2"
+    },
+    {
+      "id": "2",
+      "image": "wash",
+      "text": "+10 Clean"
+    }
+  ]
+}

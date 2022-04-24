@@ -1,0 +1,16 @@
+﻿{
+  "scene": "Food",
+  "panels": [
+    {
+      "id": "1",
+      "image": "FoundFood",
+      "text": "I found some food.",
+      "guaranteedNextPanelId": "2"
+    },
+    {
+      "id": "2",
+      "image": "FoundFood",
+      "text": "I can use this to cook dinner later!"
+    }
+  ]
+}

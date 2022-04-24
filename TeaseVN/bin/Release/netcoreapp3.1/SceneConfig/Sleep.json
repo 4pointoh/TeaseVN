@@ -1,0 +1,22 @@
+{
+    "scene":"Sleep",
+    "panels": [
+        {
+            "id": "1",
+            "image": "7",
+            "text" : "Alright, time for sleep",
+            "guaranteedNextPanelId":"2"
+        },
+        {
+            "id": "2",
+            "image": "8",
+            "text": "I set my alarm for 10am",
+            "guaranteedNextPanelId":"3"
+        },
+        {
+            "id": "3",
+            "image": "9",
+            "text": "Good night"
+        }
+    ]
+}
